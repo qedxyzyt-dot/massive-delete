@@ -32,7 +32,7 @@ Read our full [Privacy Policy](https://maildelete.com.br/privacy.html) and [Term
 
 ## Contact
 
-📧 **support@maildelete.com.br**
+📧 **augustolima04@gmail.com**
 
 ---
 

@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qedxyzyt-dot.github.io/massive-delete/sitemap.xml
+Sitemap: https://maildelete.com.br/sitemap.xml
