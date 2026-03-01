@@ -1,2 +1,6 @@
 deploy.bat
+deploy-app.bat
+deploy-history.log
+.clasp.json
+.claspignore
 .git/
