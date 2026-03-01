@@ -31,7 +31,7 @@ git init
 git add .
 git commit -m "Initial site deployment"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/massive-delete-gmail.git
+git remote add origin https://github.com/qedxyzyt-dot/massive-delete.git
 git push -u origin main
 ```
 
@@ -43,29 +43,15 @@ git push -u origin main
 4. Choose branch: **main**, folder: **/ (root)**.
 5. Click **Save**.
 
-Your site will be live at: `https://YOUR_USERNAME.github.io/massive-delete-gmail/`
+Your site will be live at: `https://qedxyzyt-dot.github.io/massive-delete/`
 
-### Step 3: Update placeholder URLs
+### Remaining placeholder
 
-Before publishing, search-and-replace these placeholders across all files:
+The only placeholder left to replace when ready:
 
-| Placeholder | Replace with |
-|---|---|
-| `SEU_DOMINIO.com` | Your actual domain (e.g., `your-username.github.io/massive-delete-gmail`) |
-| `support@SEU_DOMINIO.com` | Your actual support email |
-| `[YOUR_JURISDICTION]` | Your country/state (in `terms.html` Section 9) |
-
-You can do this quickly with:
-
-```bash
-# On Linux/macOS:
-grep -rl "SEU_DOMINIO.com" . | xargs sed -i 's/SEU_DOMINIO.com/your-actual-domain.com/g'
-
-# On Windows PowerShell:
-Get-ChildItem -Recurse -Include *.html,*.xml,*.txt | ForEach-Object {
-  (Get-Content $_.FullName) -replace 'SEU_DOMINIO\.com', 'your-actual-domain.com' | Set-Content $_.FullName
-}
-```
+| Placeholder | Where | Replace with |
+|---|---|---|
+| `[YOUR_JURISDICTION]` | `terms.html` Section 9 | Your country/state for governing law |
 
 ## 🖼️ Logo
 
