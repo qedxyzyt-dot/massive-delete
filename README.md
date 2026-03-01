@@ -1,78 +1,39 @@
-# Massive Delete Gmail — GitHub Pages Site
+# Massive Delete Gmail
 
-Static website for the **Massive Delete Gmail** product: landing page, privacy policy, and terms of service.
+**Clean your inbox. Massively.**
 
-## 📁 Structure
+Massive Delete Gmail is a free tool that lets you permanently delete thousands of unwanted emails from your Gmail account in seconds — directly from your browser, with no installs required.
 
-```
-site/
-├── index.html          # Landing page (Home)
-├── privacy.html        # Privacy Policy
-├── terms.html          # Terms of Service
-├── 404.html            # Custom 404 page
-├── styles.css          # Single stylesheet (zero dependencies)
-├── favicon.svg         # SVG favicon
-├── logo_official.svg   # Product logo (copy from project root)
-├── robots.txt          # Search engine directives
-├── sitemap.xml         # Sitemap for SEO
-└── README.md           # This file
-```
+🌐 **Website:** [maildelete.com.br](https://maildelete.com.br)
 
-## 🚀 Publishing on GitHub Pages
+---
 
-### Step 1: Create a GitHub repository
+## What it does
 
-1. Go to [github.com/new](https://github.com/new) and create a new repository (e.g., `massive-delete-gmail`).
-2. Push the contents of the `site/` folder to the **root** of the `main` branch.
+- Search your Gmail by sender name or email address
+- Preview all matching emails before taking any action
+- Permanently delete matched emails in bulk — thousands at a time
 
-```bash
-cd site
-git init
-git add .
-git commit -m "Initial site deployment"
-git branch -M main
-git remote add origin https://github.com/qedxyzyt-dot/massive-delete.git
-git push -u origin main
-```
+## How it works
 
-### Step 2: Enable GitHub Pages
+The tool runs entirely on **Google Apps Script** — Google's own server-side platform. That means:
 
-1. Go to the repository on GitHub.
-2. Navigate to **Settings** → **Pages**.
-3. Under **Source**, select **Deploy from a branch**.
-4. Choose branch: **main**, folder: **/ (root)**.
-5. Click **Save**.
+- Your data never leaves Google's infrastructure
+- No third-party servers involved
+- No passwords stored — authentication is handled by Google OAuth 2.0
 
-Your site will be live at: `https://qedxyzyt-dot.github.io/massive-delete/`
+## Security & Privacy
 
-### Remaining placeholder
+- **No email content is stored, copied, or cached** — emails are processed in real-time only
+- **Minimal logging** — only timestamps and aggregate counts (e.g., "42 emails deleted"), no personal data
+- **Revoke access anytime** — Google Account → Security → Third-party access → Remove
 
-The only placeholder left to replace when ready:
+Read our full [Privacy Policy](https://maildelete.com.br/privacy.html) and [Terms of Service](https://maildelete.com.br/terms.html).
 
-| Placeholder | Where | Replace with |
-|---|---|---|
-| `[YOUR_JURISDICTION]` | `terms.html` Section 9 | Your country/state for governing law |
+## Contact
 
-## 🖼️ Logo
+📧 **support@maildelete.com.br**
 
-The file `logo_official.svg` must be present in the same directory as the HTML files. Copy it from the project root if needed:
+---
 
-```bash
-cp ../logo_official.svg .
-```
-
-## 🔗 Pages & Navigation
-
-All pages link to each other via the top navbar and footer:
-
-- **Home** → `index.html`
-- **Privacy Policy** → `privacy.html`
-- **Terms of Service** → `terms.html`
-- **404** → `404.html` (auto-served by GitHub Pages)
-
-## ✅ No Dependencies
-
-- Zero external CSS/JS frameworks
-- Zero CDN links
-- Zero build steps
-- Works offline after download
+© 2026 Massive Delete Gmail. All rights reserved.
