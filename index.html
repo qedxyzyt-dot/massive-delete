@@ -24,9 +24,9 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="terms.html">Terms</a></li>
+      <li><a href="index.html" data-i18n="navHome">Home</a></li>
+      <li><a href="privacy.html" data-i18n="navPrivacy">Privacy</a></li>
+      <li><a href="terms.html" data-i18n="navTerms">Terms</a></li>
     </ul>
   </div>
 </nav>
@@ -34,12 +34,12 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero__content">
-    <span class="hero__badge">Free &amp; open tool</span>
-    <h1 class="hero__title">You don't need 47,000&nbsp;unread&nbsp;emails.</h1>
-    <p class="hero__desc">Search by sender, preview what matches, and wipe them out — permanently. Runs on Google's own servers. We never see your password or store your emails.</p>
-    <a href="app/" class="hero__cta">Open App — Free</a>
-    <a href="#pricing" class="hero__cta hero__cta--alt">See plans</a>
-    <small class="hero__note">No credit card needed. Free tier available.</small>
+    <span class="hero__badge" data-i18n="heroBadge">Free &amp; open tool</span>
+    <h1 class="hero__title" data-i18n="heroTitle">You don't need 47,000&nbsp;unread&nbsp;emails.</h1>
+    <p class="hero__desc" data-i18n="heroDesc">Search by sender, preview what matches, and wipe them out — permanently. Runs on Google's own servers. We never see your password or store your emails.</p>
+    <a href="app/" class="hero__cta" data-i18n="heroCta">Open App — Free</a>
+    <a href="#pricing" class="hero__cta hero__cta--alt" data-i18n="heroCtaAlt">See plans</a>
+    <small class="hero__note" data-i18n="heroNote">No credit card needed. Free tier available.</small>
   </div>
   <div class="hero__visual">
     <img src="logo_official.svg" alt="Massive Delete Gmail" width="200" height="200">
@@ -50,25 +50,25 @@
 
 <!-- How it works -->
 <section class="sect" id="how-it-works">
-  <p class="sect__label">How it works</p>
-  <h2 class="sect__heading">Three steps. No installs.</h2>
-  <p class="sect__sub">Everything runs inside Google Apps Script — the same infrastructure that powers Google Sheets macros. Nothing is installed on your computer.</p>
+  <p class="sect__label" data-i18n="howLabel">How it works</p>
+  <h2 class="sect__heading" data-i18n="howHeading">Three steps. No installs.</h2>
+  <p class="sect__sub" data-i18n="howSub">Everything runs inside Google Apps Script — the same infrastructure that powers Google Sheets macros. Nothing is installed on your computer.</p>
 
   <div class="steps">
     <div class="step">
       <div class="step__num">1</div>
-      <h3 class="step__title">Sign in with Google</h3>
-      <p class="step__text">Standard OAuth 2.0 flow. You're authenticating with Google directly — we never touch your password.</p>
+      <h3 class="step__title" data-i18n="step1Title">Sign in with Google</h3>
+      <p class="step__text" data-i18n="step1Text">Standard OAuth 2.0 flow. You're authenticating with Google directly — we never touch your password.</p>
     </div>
     <div class="step">
       <div class="step__num">2</div>
-      <h3 class="step__title">Type a sender, hit search</h3>
-      <p class="step__text">Enter one or more sender names. You'll see a preview of every matching email before anything is deleted.</p>
+      <h3 class="step__title" data-i18n="step2Title">Type a sender, hit search</h3>
+      <p class="step__text" data-i18n="step2Text">Enter one or more sender names. You'll see a preview of every matching email before anything is deleted.</p>
     </div>
     <div class="step">
       <div class="step__num">3</div>
-      <h3 class="step__title">Confirm and delete</h3>
-      <p class="step__text">Review the list, click delete. Emails are removed permanently — no limbo, no trash folder, just gone.</p>
+      <h3 class="step__title" data-i18n="step3Title">Confirm and delete</h3>
+      <p class="step__text" data-i18n="step3Text">Review the list, click delete. Emails are removed permanently — no limbo, no trash folder, just gone.</p>
     </div>
   </div>
 </section>
@@ -76,38 +76,38 @@
 <!-- Trust / Security -->
 <div class="sect--tinted">
   <section class="sect" id="security">
-    <p class="sect__label">Why trust this?</p>
-    <h2 class="sect__heading">We built it for ourselves first.</h2>
-    <p class="sect__sub">This tool started as a personal script to clean a Gmail account with 80,000+ promotional emails. The security model is simple: we don't want your data, and we architected it that way.</p>
+    <p class="sect__label" data-i18n="trustLabel">Why trust this?</p>
+    <h2 class="sect__heading" data-i18n="trustHeading">We built it for ourselves first.</h2>
+    <p class="sect__sub" data-i18n="trustSub">This tool started as a personal script to clean a Gmail account with 80,000+ promotional emails. The security model is simple: we don't want your data, and we architected it that way.</p>
 
     <div class="trust">
       <div class="trust__item">
         <div class="trust__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
         </div>
-        <h3 class="trust__title">Google handles authentication</h3>
-        <p class="trust__text">OAuth 2.0 means your password goes to Google, not to us. We receive a scoped token — that's it.</p>
+        <h3 class="trust__title" data-i18n="trust1Title">Google handles authentication</h3>
+        <p class="trust__text" data-i18n="trust1Text">OAuth 2.0 means your password goes to Google, not to us. We receive a scoped token — that's it.</p>
       </div>
       <div class="trust__item">
         <div class="trust__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
         </div>
-        <h3 class="trust__title">Emails are never stored</h3>
-        <p class="trust__text">We process in real-time to execute your request. When the session ends, nothing is retained. No database, no cache, no copies.</p>
+        <h3 class="trust__title" data-i18n="trust2Title">Emails are never stored</h3>
+        <p class="trust__text" data-i18n="trust2Text">We process in real-time to execute your request. When the session ends, nothing is retained. No database, no cache, no copies.</p>
       </div>
       <div class="trust__item">
         <div class="trust__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3 class="trust__title">Runs on Google's servers</h3>
-        <p class="trust__text">The code executes inside Google Apps Script's sandbox. Your data stays within Google's infrastructure at all times.</p>
+        <h3 class="trust__title" data-i18n="trust3Title">Runs on Google's servers</h3>
+        <p class="trust__text" data-i18n="trust3Text">The code executes inside Google Apps Script's sandbox. Your data stays within Google's infrastructure at all times.</p>
       </div>
       <div class="trust__item">
         <div class="trust__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"><path d="M9 14l-4 4m0 0l4-4m-4 4V10a4 4 0 014-4h2"/><path d="M15 10l4-4m0 0l-4 4m4-4v8a4 4 0 01-4 4h-2"/></svg>
         </div>
-        <h3 class="trust__title">Revoke access anytime</h3>
-        <p class="trust__text">Go to Google Account &rarr; Security &rarr; Third-party access, and remove us. One click, instant.</p>
+        <h3 class="trust__title" data-i18n="trust4Title">Revoke access anytime</h3>
+        <p class="trust__text" data-i18n="trust4Text">Go to Google Account → Security → Third-party access, and remove us. One click, instant.</p>
       </div>
     </div>
   </section>
@@ -115,56 +115,182 @@
 
 <!-- Pricing -->
 <section class="sect" id="pricing">
-  <p class="sect__label">Pricing</p>
-  <h2 class="sect__heading">Keep it simple.</h2>
-  <p class="sect__sub">The free plan handles most use cases. Pro removes limits and adds automation for people who want hands-off inbox maintenance.</p>
+  <p class="sect__label" data-i18n="pricingLabel">Pricing</p>
+  <h2 class="sect__heading" data-i18n="pricingHeading">Keep it simple.</h2>
+  <p class="sect__sub" data-i18n="pricingSub">The free plan handles most use cases. Pro removes limits and adds automation for people who want hands-off inbox maintenance.</p>
 
   <div class="pricing">
     <div class="plan">
       <p class="plan__name">Free</p>
-      <div class="plan__price">R$0 <span>forever</span></div>
-      <p class="plan__desc">One-time cleanups, done manually.</p>
+      <div class="plan__price">R$0 <span data-i18n="priceFreeSpan">forever</span></div>
+      <p class="plan__desc" data-i18n="freeDesc">One-time cleanups, done manually.</p>
       <ul class="plan__list">
-        <li>Up to 500 deletions per run</li>
-        <li>Search by sender name or email</li>
-        <li>Preview before deleting</li>
-        <li>Community support</li>
+        <li data-i18n="freeFeat1">Up to 500 deletions per run</li>
+        <li data-i18n="freeFeat2">Search by sender name or email</li>
+        <li data-i18n="freeFeat3">Preview before deleting</li>
+        <li data-i18n="freeFeat4">Community support</li>
       </ul>
-      <a href="app/" class="plan__btn">Get started</a>
+      <a href="app/" class="plan__btn" data-i18n="freeBtn">Get started</a>
     </div>
     <div class="plan plan--accent">
       <span class="plan__tag">Pro</span>
       <p class="plan__name">Pro</p>
-      <div class="plan__price">R$9 <span>/month</span></div>
-      <p class="plan__desc">Unlimited deletions, unsubscribe automation, and auto-block filters. Cancel anytime.</p>
+      <div class="plan__price">R$9 <span data-i18n="priceProSpan">/month</span></div>
+      <p class="plan__desc" data-i18n="proDesc">Unlimited deletions, unsubscribe automation, and auto-block filters. Cancel anytime.</p>
       <ul class="plan__list">
-        <li>Unlimited deletions per run</li>
-        <li>Unsubscribe automation</li>
-        <li>Auto-block sender filters</li>
-        <li>Priority email support</li>
+        <li data-i18n="proFeat1">Unlimited deletions per run</li>
+        <li data-i18n="proFeat2">Unsubscribe automation</li>
+        <li data-i18n="proFeat3">Auto-block sender filters</li>
+        <li data-i18n="proFeat4">Priority email support</li>
       </ul>
-      <a href="https://buy.stripe.com/bJedR27DvcdA36sfNnew804" class="plan__btn">Choose Pro</a>
+      <a href="https://buy.stripe.com/bJedR27DvcdA36sfNnew804" class="plan__btn" data-i18n="proBtn">Choose Pro</a>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-band" id="contact">
-  <p class="cta-band__text">Questions? Feedback? Just reply to this email.</p>
-  <p class="cta-band__sub">We read everything. No ticket system, no bots.</p>
+  <p class="cta-band__text" data-i18n="ctaText">Questions? Feedback? Just reply to this email.</p>
+  <p class="cta-band__sub" data-i18n="ctaSub">We read everything. No ticket system, no bots.</p>
   <a href="mailto:augustolima04@gmail.com" class="cta-band__btn">augustolima04@gmail.com</a>
 </section>
 
 <!-- Footer -->
 <footer class="footer">
   <div class="footer__row">
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="mailto:augustolima04@gmail.com">Contact</a>
+    <a href="index.html" data-i18n="navHome">Home</a>
+    <a href="privacy.html" data-i18n="navPrivacy">Privacy</a>
+    <a href="terms.html" data-i18n="navTerms">Terms</a>
+    <a href="mailto:augustolima04@gmail.com" data-i18n="navContact">Contact</a>
   </div>
   <p>&copy; 2026 Massive Delete Gmail</p>
 </footer>
+
+<script>
+(function() {
+  var lang = (navigator.language || 'en').toLowerCase();
+  var L = lang.startsWith('pt') ? 'pt' : lang.startsWith('es') ? 'es' : 'en';
+
+  var T = {
+    pt: {
+      navHome: 'Início', navPrivacy: 'Privacidade', navTerms: 'Termos', navContact: 'Contato',
+      heroBadge: 'Ferramenta gratuita e aberta',
+      heroTitle: 'Você não precisa de 47.000\u00a0e-mails\u00a0não\u00a0lidos.',
+      heroDesc: 'Pesquise por remetente, veja o que combina e apague tudo — permanentemente. Roda nos servidores do Google. Nunca vemos sua senha ou armazenamos seus e-mails.',
+      heroCta: 'Abrir App — Grátis',
+      heroCtaAlt: 'Ver planos',
+      heroNote: 'Sem cartão de crédito. Plano gratuito disponível.',
+      howLabel: 'Como funciona',
+      howHeading: 'Três passos. Sem instalação.',
+      howSub: 'Tudo roda dentro do Google Apps Script — a mesma infraestrutura que alimenta as macros do Google Sheets. Nada é instalado no seu computador.',
+      step1Title: 'Faça login com o Google',
+      step1Text: 'Fluxo padrão OAuth 2.0. Você se autentica diretamente com o Google — nós nunca tocamos na sua senha.',
+      step2Title: 'Digite um remetente e pesquise',
+      step2Text: 'Insira um ou mais nomes de remetentes. Você verá uma prévia de cada e-mail correspondente antes de qualquer exclusão.',
+      step3Title: 'Confirme e exclua',
+      step3Text: 'Revise a lista, clique em excluir. Os e-mails são removidos permanentemente — sem lixeira, sem limbo, apenas eliminados.',
+      trustLabel: 'Por que confiar?',
+      trustHeading: 'Construímos para nós mesmos primeiro.',
+      trustSub: 'Essa ferramenta começou como um script pessoal para limpar uma conta Gmail com mais de 80.000 e-mails promocionais. O modelo de segurança é simples: não queremos seus dados, e projetamos assim.',
+      trust1Title: 'Google cuida da autenticação',
+      trust1Text: 'OAuth 2.0 significa que sua senha vai para o Google, não para nós. Recebemos apenas um token com escopo limitado.',
+      trust2Title: 'E-mails nunca são armazenados',
+      trust2Text: 'Processamos em tempo real para executar sua solicitação. Quando a sessão termina, nada é retido. Sem banco de dados, sem cache, sem cópias.',
+      trust3Title: 'Roda nos servidores do Google',
+      trust3Text: 'O código executa dentro do sandbox do Google Apps Script. Seus dados permanecem dentro da infraestrutura do Google o tempo todo.',
+      trust4Title: 'Revogue o acesso a qualquer momento',
+      trust4Text: 'Vá em Conta Google → Segurança → Acesso de terceiros e nos remova. Um clique, instantâneo.',
+      pricingLabel: 'Preços',
+      pricingHeading: 'Simples assim.',
+      pricingSub: 'O plano gratuito resolve a maioria dos casos. O Pro remove limites e adiciona automação para quem quer uma caixa de entrada sempre limpa.',
+      priceFreeSpan: 'para sempre',
+      freeDesc: 'Limpezas pontuais, feitas manualmente.',
+      freeFeat1: 'Até 500 exclusões por execução',
+      freeFeat2: 'Busca por nome ou e-mail do remetente',
+      freeFeat3: 'Prévia antes de excluir',
+      freeFeat4: 'Suporte da comunidade',
+      freeBtn: 'Começar grátis',
+      priceProSpan: '/mês',
+      proDesc: 'Exclusões ilimitadas, cancelamento automático de inscrições e filtros de bloqueio automático. Cancele quando quiser.',
+      proFeat1: 'Exclusões ilimitadas por execução',
+      proFeat2: 'Cancelamento automático de inscrições',
+      proFeat3: 'Filtros de bloqueio automático',
+      proFeat4: 'Suporte prioritário por e-mail',
+      proBtn: 'Assinar Pro',
+      ctaText: 'Dúvidas? Feedback? Basta responder este e-mail.',
+      ctaSub: 'Lemos tudo. Sem sistema de tickets, sem robôs.',
+    },
+    es: {
+      navHome: 'Inicio', navPrivacy: 'Privacidad', navTerms: 'Términos', navContact: 'Contacto',
+      heroBadge: 'Herramienta gratuita y abierta',
+      heroTitle: 'No necesitas 47.000\u00a0correos\u00a0sin\u00a0leer.',
+      heroDesc: 'Busca por remitente, previsualiza lo que coincide y elimínalos — permanentemente. Funciona en los servidores de Google. Nunca vemos tu contraseña ni almacenamos tus correos.',
+      heroCta: 'Abrir App — Gratis',
+      heroCtaAlt: 'Ver planes',
+      heroNote: 'Sin tarjeta de crédito. Plan gratuito disponible.',
+      howLabel: 'Cómo funciona',
+      howHeading: 'Tres pasos. Sin instalaciones.',
+      howSub: 'Todo funciona dentro de Google Apps Script — la misma infraestructura que impulsa las macros de Google Sheets. No se instala nada en tu computadora.',
+      step1Title: 'Inicia sesión con Google',
+      step1Text: 'Flujo estándar OAuth 2.0. Te autentificas directamente con Google — nunca tocamos tu contraseña.',
+      step2Title: 'Escribe un remitente y busca',
+      step2Text: 'Ingresa uno o más nombres de remitentes. Verás una vista previa de cada correo coincidente antes de que se elimine algo.',
+      step3Title: 'Confirma y elimina',
+      step3Text: 'Revisa la lista, haz clic en eliminar. Los correos se eliminan permanentemente — sin papelera, sin limbo, simplemente desaparecen.',
+      trustLabel: '¿Por qué confiar?',
+      trustHeading: 'Lo construimos para nosotros primero.',
+      trustSub: 'Esta herramienta comenzó como un script personal para limpiar una cuenta de Gmail con más de 80.000 correos promocionales. El modelo de seguridad es simple: no queremos tus datos, y lo diseñamos así.',
+      trust1Title: 'Google maneja la autenticación',
+      trust1Text: 'OAuth 2.0 significa que tu contraseña va a Google, no a nosotros. Recibimos solo un token con alcance limitado.',
+      trust2Title: 'Los correos nunca se almacenan',
+      trust2Text: 'Procesamos en tiempo real para ejecutar tu solicitud. Cuando la sesión termina, nada se retiene. Sin base de datos, sin caché, sin copias.',
+      trust3Title: 'Funciona en los servidores de Google',
+      trust3Text: 'El código se ejecuta dentro del sandbox de Google Apps Script. Tus datos permanecen dentro de la infraestructura de Google todo el tiempo.',
+      trust4Title: 'Revoca el acceso en cualquier momento',
+      trust4Text: 'Ve a Cuenta de Google → Seguridad → Acceso de terceros y elimínanos. Un clic, instantáneo.',
+      pricingLabel: 'Precios',
+      pricingHeading: 'Así de simple.',
+      pricingSub: 'El plan gratuito resuelve la mayoría de los casos. Pro elimina límites y agrega automatización para quienes quieren una bandeja siempre limpia.',
+      priceFreeSpan: 'para siempre',
+      freeDesc: 'Limpiezas puntuales, hechas manualmente.',
+      freeFeat1: 'Hasta 500 eliminaciones por ejecución',
+      freeFeat2: 'Búsqueda por nombre o correo del remitente',
+      freeFeat3: 'Vista previa antes de eliminar',
+      freeFeat4: 'Soporte de la comunidad',
+      freeBtn: 'Empezar gratis',
+      priceProSpan: '/mes',
+      proDesc: 'Eliminaciones ilimitadas, cancelación automática de suscripciones y filtros de bloqueo automático. Cancela cuando quieras.',
+      proFeat1: 'Eliminaciones ilimitadas por ejecución',
+      proFeat2: 'Cancelación automática de suscripciones',
+      proFeat3: 'Filtros de bloqueo automático',
+      proFeat4: 'Soporte prioritario por correo',
+      proBtn: 'Suscribirse a Pro',
+      ctaText: '¿Preguntas? ¿Comentarios? Solo responde a este correo.',
+      ctaSub: 'Leemos todo. Sin sistema de tickets, sin bots.',
+    }
+  };
+
+  if (L === 'en') return;
+  var dict = T[L];
+  if (!dict) return;
+
+  // Update page title & meta description
+  if (L === 'pt') {
+    document.title = 'Massive Delete Gmail — Limpeza de E-mails em Massa';
+    document.querySelector('meta[name="description"]').content = 'Exclua milhares de e-mails indesejados do Gmail em segundos. Ferramenta gratuita e aberta. Sem senhas armazenadas.';
+  } else {
+    document.title = 'Massive Delete Gmail — Herramienta de Limpieza Masiva de Correos';
+    document.querySelector('meta[name="description"]').content = 'Elimina miles de correos no deseados de Gmail en segundos. Herramienta gratuita y abierta. Sin contraseñas almacenadas.';
+  }
+
+  document.documentElement.lang = L === 'pt' ? 'pt-BR' : 'es';
+
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (dict[key]) el.textContent = dict[key];
+  });
+})();
+</script>
 
 </body>
 </html>

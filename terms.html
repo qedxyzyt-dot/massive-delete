@@ -23,21 +23,20 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="terms.html">Terms</a></li>
+      <li><a href="index.html" data-i18n="navHome">Home</a></li>
+      <li><a href="privacy.html" data-i18n="navPrivacy">Privacy</a></li>
+      <li><a href="terms.html" data-i18n="navTerms">Terms</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Content -->
-<main class="legal">
+<!-- ══ ENGLISH ══ -->
+<main class="legal" data-lang="en">
   <h1>Terms of Service</h1>
   <p class="updated">Last updated: March 1, 2026</p>
 
   <p>These Terms of Service ("Terms") govern your use of <strong>Massive Delete Gmail</strong> (the "Service"), a bulk email deletion tool powered by Google Apps Script and the Gmail API. By accessing or using the Service, you agree to be bound by these Terms.</p>
 
-  <!-- 1 -->
   <h2>1. Scope of the Service</h2>
   <p>The Service allows authenticated Google account holders to:</p>
   <ul>
@@ -47,7 +46,6 @@
   </ul>
   <p>The Service operates exclusively within Google's infrastructure via Google Apps Script. It does not provide email backup, archiving, or recovery functionality.</p>
 
-  <!-- 2 -->
   <h2>2. Eligibility</h2>
   <ul>
     <li>You must be at least <strong>18 years old</strong> (or the age of legal majority in your jurisdiction) to use the Service.</li>
@@ -55,7 +53,6 @@
     <li>By using the Service, you represent that you have the authority to grant the required OAuth permissions.</li>
   </ul>
 
-  <!-- 3 -->
   <h2>3. Account &amp; User Responsibility</h2>
   <p>You are solely responsible for:</p>
   <ul>
@@ -65,7 +62,6 @@
     <li>Any actions taken through the Service using your authenticated session.</li>
   </ul>
 
-  <!-- 4 -->
   <h2>4. Prohibited Uses</h2>
   <p>You agree <strong>not</strong> to:</p>
   <ul>
@@ -76,10 +72,9 @@
     <li>Redistribute, resell, or sublicense the Service without prior written consent.</li>
   </ul>
 
-  <!-- 5 -->
   <h2>5. Payments &amp; Refunds</h2>
   <p><strong>Free Tier:</strong> The basic functionality of the Service is provided free of charge.</p>
-  <p><strong>Paid Plans:</strong> If you purchase a paid plan (Pro or Business), the following applies:</p>
+  <p><strong>Paid Plans:</strong> If you purchase a paid plan (Pro), the following applies:</p>
   <ul>
     <li>Pricing is as displayed on the Service's website at the time of purchase.</li>
     <li>Subscriptions are billed monthly. You may cancel at any time; cancellation takes effect at the end of the current billing period.</li>
@@ -88,16 +83,14 @@
   </ul>
   <p><em>Note: Payment processing is handled by third-party providers. We do not store credit card or payment information.</em></p>
 
-  <!-- 6 -->
   <h2>6. Disclaimer &amp; Limitation of Liability</h2>
   <p>The Service is provided <strong>"as is"</strong> and <strong>"as available"</strong>, without warranties of any kind, express or implied.</p>
   <ul>
     <li>We do not guarantee that deletion operations will always complete successfully (e.g., due to Gmail API rate limits or Google outages).</li>
     <li>We are <strong>not responsible</strong> for any data loss resulting from your use of the Service, including accidental deletion of emails you intended to keep.</li>
-    <li>To the maximum extent permitted by applicable law, our total liability for any claims arising from the Service shall not exceed the amount you paid us in the preceding 12 months (or $0 for free-tier users).</li>
+    <li>To the maximum extent permitted by applicable law, our total liability for any claims arising from the Service shall not exceed the amount you paid us in the preceding 12 months (or R$0 for free-tier users).</li>
   </ul>
 
-  <!-- 7 -->
   <h2>7. Changes to the Service</h2>
   <p>We reserve the right to:</p>
   <ul>
@@ -106,7 +99,6 @@
   </ul>
   <p>We will make reasonable efforts to notify users of material changes.</p>
 
-  <!-- 8 -->
   <h2>8. Termination</h2>
   <p>We may suspend or terminate your access to the Service if:</p>
   <ul>
@@ -116,29 +108,205 @@
   </ul>
   <p>You may stop using the Service at any time by revoking OAuth access (see our <a href="privacy.html">Privacy Policy</a>, Section 9).</p>
 
-  <!-- 9 -->
   <h2>9. Governing Law</h2>
   <p>These Terms shall be governed by and construed in accordance with the laws of <strong>Brazil</strong>, without regard to conflict-of-law principles. Any disputes shall be resolved in the courts of <strong>Brazil</strong>.</p>
 
-  <!-- 10 -->
   <h2>10. Changes to These Terms</h2>
   <p>We may update these Terms from time to time. The "Last updated" date at the top reflects the most recent revision. Continued use of the Service after changes constitutes acceptance of the revised Terms.</p>
 
-  <!-- 11 -->
   <h2>11. Contact</h2>
   <p>If you have questions about these Terms, please contact us:</p>
   <p><strong>Email:</strong> <a href="mailto:augustolima04@gmail.com">augustolima04@gmail.com</a></p>
 </main>
 
+<!-- ══ PORTUGUÊS ══ -->
+<main class="legal" data-lang="pt" style="display:none">
+  <h1>Termos de Serviço</h1>
+  <p class="updated">Última atualização: 1 de março de 2026</p>
+
+  <p>Estes Termos de Serviço ("Termos") regem o uso do <strong>Massive Delete Gmail</strong> (o "Serviço"), uma ferramenta de exclusão em massa de e-mails baseada no Google Apps Script e na Gmail API. Ao acessar ou usar o Serviço, você concorda com estes Termos.</p>
+
+  <h2>1. Escopo do Serviço</h2>
+  <p>O Serviço permite que titulares autenticados de contas Google:</p>
+  <ul>
+    <li>Pesquisem sua caixa de entrada do Gmail por e-mails que correspondam a critérios específicos de remetente.</li>
+    <li>Visualizem uma prévia dos e-mails correspondentes antes de qualquer ação.</li>
+    <li>Excluam permanentemente e-mails selecionados em massa.</li>
+  </ul>
+  <p>O Serviço opera exclusivamente dentro da infraestrutura do Google via Google Apps Script. Não fornece funcionalidade de backup, arquivamento ou recuperação de e-mails.</p>
+
+  <h2>2. Elegibilidade</h2>
+  <ul>
+    <li>Você deve ter pelo menos <strong>18 anos</strong> (ou a maioridade legal na sua jurisdição) para usar o Serviço.</li>
+    <li>Você deve ter uma conta Google válida com o Gmail ativado.</li>
+    <li>Ao usar o Serviço, você declara que tem autoridade para conceder as permissões OAuth necessárias.</li>
+  </ul>
+
+  <h2>3. Responsabilidade da Conta e do Usuário</h2>
+  <p>Você é o único responsável por:</p>
+  <ul>
+    <li>Revisar a prévia dos e-mails correspondentes <strong>antes</strong> de confirmar a exclusão.</li>
+    <li>Entender que a <strong>exclusão permanente é irreversível</strong> — e-mails excluídos não podem ser recuperados por nós ou pelo Google.</li>
+    <li>Manter a segurança da sua conta Google e credenciais OAuth.</li>
+    <li>Quaisquer ações tomadas através do Serviço usando sua sessão autenticada.</li>
+  </ul>
+
+  <h2>4. Usos Proibidos</h2>
+  <p>Você concorda em <strong>não</strong>:</p>
+  <ul>
+    <li>Usar o Serviço para acessar ou excluir e-mails de contas que você não possui ou não tem autorização para gerenciar.</li>
+    <li>Tentar fazer engenharia reversa, descompilar ou extrair o código-fonte do Serviço.</li>
+    <li>Usar o Serviço para qualquer finalidade ilegal, fraudulenta ou maliciosa.</li>
+    <li>Contornar quaisquer limites de taxa, cotas ou mecanismos de segurança.</li>
+    <li>Redistribuir, revender ou sublicenciar o Serviço sem consentimento prévio por escrito.</li>
+  </ul>
+
+  <h2>5. Pagamentos e Reembolsos</h2>
+  <p><strong>Plano Gratuito:</strong> A funcionalidade básica do Serviço é fornecida gratuitamente.</p>
+  <p><strong>Planos Pagos:</strong> Se você adquirir um plano pago (Pro), o seguinte se aplica:</p>
+  <ul>
+    <li>Os preços são conforme exibidos no site do Serviço no momento da compra.</li>
+    <li>Assinaturas são cobradas mensalmente. Você pode cancelar a qualquer momento; o cancelamento entra em vigor no final do período de cobrança atual.</li>
+    <li>Reembolsos podem ser solicitados dentro de <strong>14 dias</strong> da compra inicial se você não estiver satisfeito. Após 14 dias, os reembolsos ficam a nosso critério.</li>
+    <li>Reservamo-nos o direito de alterar os preços com <strong>30 dias de aviso prévio</strong>.</li>
+  </ul>
+  <p><em>Nota: O processamento de pagamentos é realizado por provedores terceirizados. Não armazenamos dados de cartão de crédito ou informações de pagamento.</em></p>
+
+  <h2>6. Isenção de Responsabilidade e Limitação de Responsabilidade</h2>
+  <p>O Serviço é fornecido <strong>"como está"</strong> e <strong>"conforme disponível"</strong>, sem garantias de qualquer tipo, expressas ou implícitas.</p>
+  <ul>
+    <li>Não garantimos que as operações de exclusão sempre serão concluídas com sucesso (ex.: devido a limites de taxa da Gmail API ou indisponibilidade do Google).</li>
+    <li><strong>Não somos responsáveis</strong> por qualquer perda de dados resultante do uso do Serviço, incluindo exclusão acidental de e-mails que você pretendia manter.</li>
+    <li>Na extensão máxima permitida pela lei aplicável, nossa responsabilidade total por quaisquer reclamações decorrentes do Serviço não excederá o valor que você nos pagou nos 12 meses anteriores (ou R$0 para usuários do plano gratuito).</li>
+  </ul>
+
+  <h2>7. Alterações no Serviço</h2>
+  <p>Reservamo-nos o direito de:</p>
+  <ul>
+    <li>Modificar, suspender ou descontinuar o Serviço (ou qualquer parte dele) a qualquer momento, com ou sem aviso prévio.</li>
+    <li>Atualizar recursos, interfaces ou funcionalidades conforme julgarmos adequado.</li>
+  </ul>
+  <p>Faremos esforços razoáveis para notificar os usuários sobre alterações significativas.</p>
+
+  <h2>8. Rescisão</h2>
+  <p>Podemos suspender ou encerrar seu acesso ao Serviço se:</p>
+  <ul>
+    <li>Você violar estes Termos.</li>
+    <li>Seu uso representar um risco de segurança ou perturbar o Serviço para outros usuários.</li>
+    <li>Exigido por lei ou solicitação legal válida.</li>
+  </ul>
+  <p>Você pode parar de usar o Serviço a qualquer momento revogando o acesso OAuth (veja nossa <a href="privacy.html">Política de Privacidade</a>, Seção 9).</p>
+
+  <h2>9. Lei Aplicável</h2>
+  <p>Estes Termos serão regidos e interpretados de acordo com as leis do <strong>Brasil</strong>, sem considerar princípios de conflitos de leis. Quaisquer disputas serão resolvidas nos tribunais do <strong>Brasil</strong>.</p>
+
+  <h2>10. Alterações nestes Termos</h2>
+  <p>Podemos atualizar estes Termos periodicamente. A data de "Última atualização" no topo reflete a revisão mais recente. O uso continuado do Serviço após as alterações constitui aceitação dos Termos revisados.</p>
+
+  <h2>11. Contato</h2>
+  <p>Se você tiver perguntas sobre estes Termos, entre em contato:</p>
+  <p><strong>E-mail:</strong> <a href="mailto:augustolima04@gmail.com">augustolima04@gmail.com</a></p>
+</main>
+
+<!-- ══ ESPAÑOL ══ -->
+<main class="legal" data-lang="es" style="display:none">
+  <h1>Términos de Servicio</h1>
+  <p class="updated">Última actualización: 1 de marzo de 2026</p>
+
+  <p>Estos Términos de Servicio ("Términos") rigen el uso de <strong>Massive Delete Gmail</strong> (el "Servicio"), una herramienta de eliminación masiva de correos electrónicos basada en Google Apps Script y la Gmail API. Al acceder o usar el Servicio, usted acepta estos Términos.</p>
+
+  <h2>1. Alcance del Servicio</h2>
+  <p>El Servicio permite a titulares autenticados de cuentas de Google:</p>
+  <ul>
+    <li>Buscar en su bandeja de entrada de Gmail correos que coincidan con criterios específicos de remitente.</li>
+    <li>Previsualizar correos coincidentes antes de tomar cualquier acción.</li>
+    <li>Eliminar permanentemente correos seleccionados de forma masiva.</li>
+  </ul>
+  <p>El Servicio opera exclusivamente dentro de la infraestructura de Google a través de Google Apps Script. No proporciona funcionalidad de respaldo, archivo o recuperación de correos.</p>
+
+  <h2>2. Elegibilidad</h2>
+  <ul>
+    <li>Debe tener al menos <strong>18 años</strong> (o la mayoría de edad legal en su jurisdicción) para usar el Servicio.</li>
+    <li>Debe tener una cuenta de Google válida con Gmail habilitado.</li>
+    <li>Al usar el Servicio, usted declara que tiene la autoridad para otorgar los permisos OAuth requeridos.</li>
+  </ul>
+
+  <h2>3. Responsabilidad de la Cuenta y del Usuario</h2>
+  <p>Usted es el único responsable de:</p>
+  <ul>
+    <li>Revisar la vista previa de correos coincidentes <strong>antes</strong> de confirmar la eliminación.</li>
+    <li>Entender que la <strong>eliminación permanente es irreversible</strong> — los correos eliminados no pueden ser recuperados por nosotros ni por Google.</li>
+    <li>Mantener la seguridad de su cuenta de Google y credenciales OAuth.</li>
+    <li>Cualquier acción realizada a través del Servicio usando su sesión autenticada.</li>
+  </ul>
+
+  <h2>4. Usos Prohibidos</h2>
+  <p>Usted se compromete a <strong>no</strong>:</p>
+  <ul>
+    <li>Usar el Servicio para acceder o eliminar correos de cuentas que no le pertenecen o para las que no tiene autorización.</li>
+    <li>Intentar realizar ingeniería inversa, descompilar o extraer el código fuente del Servicio.</li>
+    <li>Usar el Servicio para cualquier propósito ilegal, fraudulento o malicioso.</li>
+    <li>Eludir cualquier límite de velocidad, cuota o mecanismo de seguridad.</li>
+    <li>Redistribuir, revender o sublicenciar el Servicio sin consentimiento previo por escrito.</li>
+  </ul>
+
+  <h2>5. Pagos y Reembolsos</h2>
+  <p><strong>Plan Gratuito:</strong> La funcionalidad básica del Servicio se proporciona de forma gratuita.</p>
+  <p><strong>Planes de Pago:</strong> Si adquiere un plan de pago (Pro), se aplica lo siguiente:</p>
+  <ul>
+    <li>Los precios son según se muestran en el sitio web del Servicio en el momento de la compra.</li>
+    <li>Las suscripciones se facturan mensualmente. Puede cancelar en cualquier momento; la cancelación entra en vigor al final del período de facturación actual.</li>
+    <li>Los reembolsos pueden solicitarse dentro de los <strong>14 días</strong> de la compra inicial si no está satisfecho. Después de 14 días, los reembolsos quedan a nuestra discreción.</li>
+    <li>Nos reservamos el derecho de cambiar los precios con <strong>30 días de aviso</strong>.</li>
+  </ul>
+  <p><em>Nota: El procesamiento de pagos es manejado por proveedores terceros. No almacenamos datos de tarjetas de crédito o información de pago.</em></p>
+
+  <h2>6. Descargo de Responsabilidad y Limitación de Responsabilidad</h2>
+  <p>El Servicio se proporciona <strong>"tal cual"</strong> y <strong>"según disponibilidad"</strong>, sin garantías de ningún tipo, expresas o implícitas.</p>
+  <ul>
+    <li>No garantizamos que las operaciones de eliminación siempre se completen con éxito (ej.: debido a límites de la Gmail API o interrupciones de Google).</li>
+    <li><strong>No somos responsables</strong> de ninguna pérdida de datos resultante de su uso del Servicio, incluyendo la eliminación accidental de correos que pretendía conservar.</li>
+    <li>En la máxima medida permitida por la ley aplicable, nuestra responsabilidad total por cualquier reclamación derivada del Servicio no excederá el monto que nos pagó en los 12 meses anteriores (o R$0 para usuarios del plan gratuito).</li>
+  </ul>
+
+  <h2>7. Cambios en el Servicio</h2>
+  <p>Nos reservamos el derecho de:</p>
+  <ul>
+    <li>Modificar, suspender o discontinuar el Servicio (o cualquier parte) en cualquier momento, con o sin aviso.</li>
+    <li>Actualizar funciones, interfaces o funcionalidades según consideremos apropiado.</li>
+  </ul>
+  <p>Haremos esfuerzos razonables para notificar a los usuarios sobre cambios significativos.</p>
+
+  <h2>8. Terminación</h2>
+  <p>Podemos suspender o terminar su acceso al Servicio si:</p>
+  <ul>
+    <li>Viola estos Términos.</li>
+    <li>Su uso representa un riesgo de seguridad o interrumpe el Servicio para otros usuarios.</li>
+    <li>Lo requiere la ley o una solicitud legal válida.</li>
+  </ul>
+  <p>Puede dejar de usar el Servicio en cualquier momento revocando el acceso OAuth (ver nuestra <a href="privacy.html">Política de Privacidad</a>, Sección 9).</p>
+
+  <h2>9. Ley Aplicable</h2>
+  <p>Estos Términos se regirán e interpretarán de acuerdo con las leyes de <strong>Brasil</strong>, sin considerar principios de conflictos de leyes. Cualquier disputa se resolverá en los tribunales de <strong>Brasil</strong>.</p>
+
+  <h2>10. Cambios en estos Términos</h2>
+  <p>Podemos actualizar estos Términos periódicamente. La fecha de "Última actualización" en la parte superior refleja la revisión más reciente. El uso continuado del Servicio después de los cambios constituye aceptación de los Términos revisados.</p>
+
+  <h2>11. Contacto</h2>
+  <p>Si tiene preguntas sobre estos Términos, contáctenos:</p>
+  <p><strong>Correo:</strong> <a href="mailto:augustolima04@gmail.com">augustolima04@gmail.com</a></p>
+</main>
+
 <footer class="footer">
   <div class="footer__row">
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="mailto:augustolima04@gmail.com">Contact</a>
+    <a href="index.html" data-i18n="navHome">Home</a>
+    <a href="privacy.html" data-i18n="navPrivacy">Privacy</a>
+    <a href="terms.html" data-i18n="navTerms">Terms</a>
+    <a href="mailto:augustolima04@gmail.com" data-i18n="navContact">Contact</a>
   </div>
   <p>&copy; 2026 Massive Delete Gmail</p>
 </footer>
 
+<script src="i18n-legal.js"></script>
 </body>
 </html>

@@ -23,21 +23,20 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-      <li><a href="terms.html">Terms</a></li>
+      <li><a href="index.html" data-i18n="navHome">Home</a></li>
+      <li><a href="privacy.html" data-i18n="navPrivacy">Privacy</a></li>
+      <li><a href="terms.html" data-i18n="navTerms">Terms</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Content -->
-<main class="legal">
+<!-- ══ ENGLISH ══ -->
+<main class="legal" data-lang="en">
   <h1>Privacy Policy</h1>
   <p class="updated">Last updated: March 1, 2026</p>
 
   <p>This Privacy Policy describes how <strong>Massive Delete Gmail</strong> ("we", "us", "our") collects, uses, and protects information when you use our Gmail bulk-deletion tool (the "Service"). By using the Service, you agree to this policy.</p>
 
-  <!-- 1 -->
   <h2>1. Data Accessed via Google OAuth</h2>
   <p>To function, the Service requests the following OAuth scopes from your Google account:</p>
   <ul>
@@ -47,7 +46,6 @@
   </ul>
   <p>We request only the minimum scopes necessary. We do <strong>not</strong> request access to Google Drive, Contacts, Calendar, or any other Google service.</p>
 
-  <!-- 2 -->
   <h2>2. How We Use Gmail API &amp; Apps Script</h2>
   <p>The Service runs entirely within <strong>Google Apps Script</strong>, a server-side JavaScript platform hosted by Google. This means:</p>
   <ul>
@@ -56,7 +54,6 @@
     <li>No email data is transmitted to, or processed on, any external server.</li>
   </ul>
 
-  <!-- 3 -->
   <h2>3. Data Storage</h2>
   <p><strong>We do not store the content of your emails.</strong> Specifically:</p>
   <ul>
@@ -65,7 +62,6 @@
     <li>Once a session ends, no email data is retained.</li>
   </ul>
 
-  <!-- 4 -->
   <h2>4. Minimal Logging</h2>
   <p>For operational reliability and debugging, we may log:</p>
   <ul>
@@ -74,7 +70,6 @@
   </ul>
   <p>These logs do <strong>not</strong> contain email content, subject lines, sender addresses, or any personally identifiable information. Logs are retained for a maximum of <strong>90 days</strong> and are used solely for debugging and improving the Service.</p>
 
-  <!-- 5 -->
   <h2>5. Data Retention</h2>
   <ul>
     <li><strong>Email data:</strong> Not retained. Processed in real-time and discarded immediately.</li>
@@ -82,7 +77,6 @@
     <li><strong>Aggregate logs:</strong> Retained for up to 90 days, then automatically purged.</li>
   </ul>
 
-  <!-- 6 -->
   <h2>6. Data Sharing</h2>
   <p>We do <strong>not</strong> sell, rent, share, or disclose your data to third parties. Period.</p>
   <p>The only parties with access to your data during processing are:</p>
@@ -91,7 +85,6 @@
     <li><strong>You</strong> — the authenticated account owner.</li>
   </ul>
 
-  <!-- 7 -->
   <h2>7. Security</h2>
   <p>We implement the following safeguards:</p>
   <ul>
@@ -101,7 +94,6 @@
     <li>No data is stored on external databases or servers.</li>
   </ul>
 
-  <!-- 8 -->
   <h2>8. Your Rights</h2>
   <p>You have the right to:</p>
   <ul>
@@ -111,35 +103,213 @@
     <li><strong>Portability:</strong> Since we don't store your data, there is nothing to export.</li>
   </ul>
 
-  <!-- 9 -->
   <h2>9. How to Revoke Access</h2>
   <p>You can revoke the Service's access to your Gmail at any time:</p>
   <ol>
     <li>Go to <a href="https://myaccount.google.com/security" target="_blank" rel="noopener">Google Account → Security</a>.</li>
     <li>Under <strong>"Third-party apps with account access"</strong>, click <strong>"Manage third-party access"</strong>.</li>
-    <li>Find <strong>"Massive Delete Gmail"</strong> (or "Gmail — Massive Delete") and click <strong>"Remove Access"</strong>.</li>
+    <li>Find <strong>"Massive Delete Gmail"</strong> and click <strong>"Remove Access"</strong>.</li>
   </ol>
   <p>Once revoked, the Service will no longer be able to access your Gmail data.</p>
 
-  <!-- 10 -->
   <h2>10. Changes to This Policy</h2>
   <p>We may update this Privacy Policy from time to time. Changes will be reflected by updating the "Last updated" date at the top. Continued use of the Service after changes constitutes acceptance of the revised policy.</p>
 
-  <!-- 11 -->
   <h2>11. Contact</h2>
   <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
   <p><strong>Email:</strong> <a href="mailto:augustolima04@gmail.com">augustolima04@gmail.com</a></p>
 </main>
 
+<!-- ══ PORTUGUÊS ══ -->
+<main class="legal" data-lang="pt" style="display:none">
+  <h1>Política de Privacidade</h1>
+  <p class="updated">Última atualização: 1 de março de 2026</p>
+
+  <p>Esta Política de Privacidade descreve como o <strong>Massive Delete Gmail</strong> ("nós", "nosso") coleta, utiliza e protege informações quando você usa nossa ferramenta de exclusão em massa de e-mails do Gmail (o "Serviço"). Ao usar o Serviço, você concorda com esta política.</p>
+
+  <h2>1. Dados Acessados via Google OAuth</h2>
+  <p>Para funcionar, o Serviço solicita os seguintes escopos OAuth da sua conta Google:</p>
+  <ul>
+    <li><strong>Metadados do Gmail (somente leitura)</strong> — para pesquisar e listar e-mails que correspondam aos seus critérios (remetente, palavras-chave).</li>
+    <li><strong>Modificação / exclusão do Gmail</strong> — para excluir permanentemente e-mails que você confirmou explicitamente para exclusão.</li>
+    <li><strong>Endereço de e-mail do usuário</strong> — para exibir qual conta está conectada.</li>
+  </ul>
+  <p>Solicitamos apenas os escopos mínimos necessários. <strong>Não</strong> solicitamos acesso ao Google Drive, Contatos, Agenda ou qualquer outro serviço Google.</p>
+
+  <h2>2. Como Usamos a Gmail API e o Apps Script</h2>
+  <p>O Serviço funciona inteiramente dentro do <strong>Google Apps Script</strong>, uma plataforma JavaScript do lado do servidor hospedada pelo Google. Isso significa:</p>
+  <ul>
+    <li>Todo o processamento ocorre na infraestrutura do Google — não em servidores de terceiros.</li>
+    <li>O Serviço usa a <strong>Gmail API</strong> e o <strong>GmailApp</strong> (serviço nativo do Apps Script) para pesquisar, listar e excluir threads de e-mail.</li>
+    <li>Nenhum dado de e-mail é transmitido ou processado em qualquer servidor externo.</li>
+  </ul>
+
+  <h2>3. Armazenamento de Dados</h2>
+  <p><strong>Não armazenamos o conteúdo dos seus e-mails.</strong> Especificamente:</p>
+  <ul>
+    <li>Corpos de e-mail, anexos, cabeçalhos e metadados <strong>nunca</strong> são salvos, copiados ou armazenados em cache pelo Serviço.</li>
+    <li>E-mails são processados em tempo real exclusivamente para executar as ações que você solicita (pesquisar, pré-visualizar, excluir).</li>
+    <li>Quando uma sessão termina, nenhum dado de e-mail é retido.</li>
+  </ul>
+
+  <h2>4. Registro Mínimo</h2>
+  <p>Para confiabilidade operacional e depuração, podemos registrar:</p>
+  <ul>
+    <li><strong>Timestamps</strong> de operações (ex.: quando um lote de exclusão foi executado).</li>
+    <li><strong>Métricas agregadas</strong> (ex.: número total de e-mails excluídos, contagem de erros).</li>
+  </ul>
+  <p>Esses registros <strong>não</strong> contêm conteúdo de e-mail, linhas de assunto, endereços de remetentes ou qualquer informação pessoalmente identificável. Os registros são mantidos por no máximo <strong>90 dias</strong> e são usados exclusivamente para depuração e melhoria do Serviço.</p>
+
+  <h2>5. Retenção de Dados</h2>
+  <ul>
+    <li><strong>Dados de e-mail:</strong> Não retidos. Processados em tempo real e descartados imediatamente.</li>
+    <li><strong>Identificador da conta (endereço de e-mail):</strong> Exibido apenas durante sua sessão; não armazenado permanentemente pelo Serviço.</li>
+    <li><strong>Registros agregados:</strong> Mantidos por até 90 dias, depois eliminados automaticamente.</li>
+  </ul>
+
+  <h2>6. Compartilhamento de Dados</h2>
+  <p><strong>Não</strong> vendemos, alugamos, compartilhamos ou divulgamos seus dados a terceiros. Ponto final.</p>
+  <p>As únicas partes com acesso aos seus dados durante o processamento são:</p>
+  <ul>
+    <li><strong>Google</strong> — como provedor de infraestrutura (Apps Script, Gmail API).</li>
+    <li><strong>Você</strong> — o proprietário autenticado da conta.</li>
+  </ul>
+
+  <h2>7. Segurança</h2>
+  <p>Implementamos as seguintes proteções:</p>
+  <ul>
+    <li>Toda comunicação ocorre sobre criptografia HTTPS/TLS.</li>
+    <li>A autenticação é delegada ao sistema OAuth 2.0 do Google — nunca vemos sua senha.</li>
+    <li>O Serviço funciona dentro do ambiente sandbox seguro do Google Apps Script.</li>
+    <li>Nenhum dado é armazenado em bancos de dados ou servidores externos.</li>
+  </ul>
+
+  <h2>8. Seus Direitos</h2>
+  <p>Você tem o direito de:</p>
+  <ul>
+    <li><strong>Acesso:</strong> Saber quais dados o Serviço processa (resposta: apenas o necessário para operações em tempo real).</li>
+    <li><strong>Exclusão:</strong> Solicitar que quaisquer registros residuais sejam excluídos — entre em contato conosco e cumpriremos prontamente.</li>
+    <li><strong>Revogação:</strong> Revogar o acesso do Serviço à sua conta Google a qualquer momento (veja abaixo).</li>
+    <li><strong>Portabilidade:</strong> Como não armazenamos seus dados, não há nada para exportar.</li>
+  </ul>
+
+  <h2>9. Como Revogar o Acesso</h2>
+  <p>Você pode revogar o acesso do Serviço ao seu Gmail a qualquer momento:</p>
+  <ol>
+    <li>Acesse <a href="https://myaccount.google.com/security" target="_blank" rel="noopener">Conta Google → Segurança</a>.</li>
+    <li>Em <strong>"Apps de terceiros com acesso à conta"</strong>, clique em <strong>"Gerenciar acesso de terceiros"</strong>.</li>
+    <li>Encontre <strong>"Massive Delete Gmail"</strong> e clique em <strong>"Remover Acesso"</strong>.</li>
+  </ol>
+  <p>Uma vez revogado, o Serviço não poderá mais acessar seus dados do Gmail.</p>
+
+  <h2>10. Alterações nesta Política</h2>
+  <p>Podemos atualizar esta Política de Privacidade periodicamente. As alterações serão refletidas atualizando a data de "Última atualização" no topo. O uso continuado do Serviço após as alterações constitui aceitação da política revisada.</p>
+
+  <h2>11. Contato</h2>
+  <p>Se você tiver perguntas ou preocupações sobre esta Política de Privacidade, entre em contato:</p>
+  <p><strong>E-mail:</strong> <a href="mailto:augustolima04@gmail.com">augustolima04@gmail.com</a></p>
+</main>
+
+<!-- ══ ESPAÑOL ══ -->
+<main class="legal" data-lang="es" style="display:none">
+  <h1>Política de Privacidad</h1>
+  <p class="updated">Última actualización: 1 de marzo de 2026</p>
+
+  <p>Esta Política de Privacidad describe cómo <strong>Massive Delete Gmail</strong> ("nosotros", "nuestro") recopila, utiliza y protege la información cuando usted usa nuestra herramienta de eliminación masiva de correos de Gmail (el "Servicio"). Al usar el Servicio, usted acepta esta política.</p>
+
+  <h2>1. Datos Accedidos vía Google OAuth</h2>
+  <p>Para funcionar, el Servicio solicita los siguientes alcances OAuth de su cuenta de Google:</p>
+  <ul>
+    <li><strong>Metadatos de Gmail (solo lectura)</strong> — para buscar y listar correos que coincidan con sus criterios (remitente, palabras clave).</li>
+    <li><strong>Modificación / eliminación de Gmail</strong> — para eliminar permanentemente correos que usted ha confirmado explícitamente para eliminación.</li>
+    <li><strong>Dirección de correo del usuario</strong> — para mostrar qué cuenta está conectada.</li>
+  </ul>
+  <p>Solicitamos solo los alcances mínimos necesarios. <strong>No</strong> solicitamos acceso a Google Drive, Contactos, Calendario ni ningún otro servicio de Google.</p>
+
+  <h2>2. Cómo Usamos la Gmail API y Apps Script</h2>
+  <p>El Servicio funciona completamente dentro de <strong>Google Apps Script</strong>, una plataforma JavaScript del lado del servidor alojada por Google. Esto significa:</p>
+  <ul>
+    <li>Todo el procesamiento ocurre en la infraestructura de Google — no en servidores de terceros.</li>
+    <li>El Servicio usa la <strong>Gmail API</strong> y <strong>GmailApp</strong> (servicio nativo de Apps Script) para buscar, listar y eliminar hilos de correo.</li>
+    <li>Ningún dato de correo se transmite a, o se procesa en, ningún servidor externo.</li>
+  </ul>
+
+  <h2>3. Almacenamiento de Datos</h2>
+  <p><strong>No almacenamos el contenido de sus correos.</strong> Específicamente:</p>
+  <ul>
+    <li>Cuerpos de correo, archivos adjuntos, encabezados y metadatos <strong>nunca</strong> se guardan, copian o almacenan en caché por el Servicio.</li>
+    <li>Los correos se procesan en tiempo real exclusivamente para ejecutar las acciones que usted solicita (buscar, previsualizar, eliminar).</li>
+    <li>Cuando una sesión termina, ningún dato de correo se retiene.</li>
+  </ul>
+
+  <h2>4. Registro Mínimo</h2>
+  <p>Para confiabilidad operativa y depuración, podemos registrar:</p>
+  <ul>
+    <li><strong>Marcas de tiempo</strong> de operaciones (ej.: cuándo se ejecutó un lote de eliminación).</li>
+    <li><strong>Métricas agregadas</strong> (ej.: número total de correos eliminados, conteo de errores).</li>
+  </ul>
+  <p>Estos registros <strong>no</strong> contienen contenido de correo, líneas de asunto, direcciones de remitentes ni ninguna información personalmente identificable. Los registros se mantienen por un máximo de <strong>90 días</strong> y se usan exclusivamente para depuración y mejora del Servicio.</p>
+
+  <h2>5. Retención de Datos</h2>
+  <ul>
+    <li><strong>Datos de correo:</strong> No retenidos. Procesados en tiempo real y descartados inmediatamente.</li>
+    <li><strong>Identificador de cuenta (dirección de correo):</strong> Mostrado solo durante su sesión; no almacenado permanentemente por el Servicio.</li>
+    <li><strong>Registros agregados:</strong> Retenidos por hasta 90 días, luego eliminados automáticamente.</li>
+  </ul>
+
+  <h2>6. Compartir Datos</h2>
+  <p><strong>No</strong> vendemos, alquilamos, compartimos ni divulgamos sus datos a terceros. Punto.</p>
+  <p>Las únicas partes con acceso a sus datos durante el procesamiento son:</p>
+  <ul>
+    <li><strong>Google</strong> — como proveedor de infraestructura (Apps Script, Gmail API).</li>
+    <li><strong>Usted</strong> — el propietario autenticado de la cuenta.</li>
+  </ul>
+
+  <h2>7. Seguridad</h2>
+  <p>Implementamos las siguientes protecciones:</p>
+  <ul>
+    <li>Toda la comunicación ocurre sobre encriptación HTTPS/TLS.</li>
+    <li>La autenticación se delega al sistema OAuth 2.0 de Google — nunca vemos su contraseña.</li>
+    <li>El Servicio funciona dentro del entorno sandbox seguro de Google Apps Script.</li>
+    <li>Ningún dato se almacena en bases de datos o servidores externos.</li>
+  </ul>
+
+  <h2>8. Sus Derechos</h2>
+  <p>Usted tiene derecho a:</p>
+  <ul>
+    <li><strong>Acceso:</strong> Saber qué datos procesa el Servicio (respuesta: solo lo necesario para operaciones en tiempo real).</li>
+    <li><strong>Eliminación:</strong> Solicitar que cualquier registro residual sea eliminado — contáctenos y cumpliremos prontamente.</li>
+    <li><strong>Revocación:</strong> Revocar el acceso del Servicio a su cuenta de Google en cualquier momento (ver abajo).</li>
+    <li><strong>Portabilidad:</strong> Como no almacenamos sus datos, no hay nada que exportar.</li>
+  </ul>
+
+  <h2>9. Cómo Revocar el Acceso</h2>
+  <p>Puede revocar el acceso del Servicio a su Gmail en cualquier momento:</p>
+  <ol>
+    <li>Vaya a <a href="https://myaccount.google.com/security" target="_blank" rel="noopener">Cuenta de Google → Seguridad</a>.</li>
+    <li>En <strong>"Apps de terceros con acceso a la cuenta"</strong>, haga clic en <strong>"Administrar acceso de terceros"</strong>.</li>
+    <li>Encuentre <strong>"Massive Delete Gmail"</strong> y haga clic en <strong>"Quitar acceso"</strong>.</li>
+  </ol>
+  <p>Una vez revocado, el Servicio ya no podrá acceder a sus datos de Gmail.</p>
+
+  <h2>10. Cambios en esta Política</h2>
+  <p>Podemos actualizar esta Política de Privacidad periódicamente. Los cambios se reflejarán actualizando la fecha de "Última actualización" en la parte superior. El uso continuado del Servicio después de los cambios constituye aceptación de la política revisada.</p>
+
+  <h2>11. Contacto</h2>
+  <p>Si tiene preguntas o inquietudes sobre esta Política de Privacidad, contáctenos:</p>
+  <p><strong>Correo:</strong> <a href="mailto:augustolima04@gmail.com">augustolima04@gmail.com</a></p>
+</main>
+
 <footer class="footer">
   <div class="footer__row">
-    <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="mailto:augustolima04@gmail.com">Contact</a>
+    <a href="index.html" data-i18n="navHome">Home</a>
+    <a href="privacy.html" data-i18n="navPrivacy">Privacy</a>
+    <a href="terms.html" data-i18n="navTerms">Terms</a>
+    <a href="mailto:augustolima04@gmail.com" data-i18n="navContact">Contact</a>
   </div>
   <p>&copy; 2026 Massive Delete Gmail</p>
 </footer>
 
+<script src="i18n-legal.js"></script>
 </body>
 </html>
