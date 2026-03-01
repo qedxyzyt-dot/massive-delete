@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Massive Delete Gmail — Bulk Email Cleanup Tool</title>
-  <meta name="description" content="Delete thousands of unwanted Gmail emails in seconds. Fast, secure, bulk email cleanup powered by Google Apps Script.">
+  <meta name="description" content="Delete thousands of unwanted Gmail emails in seconds. Free, open tool powered by Google Apps Script. No passwords stored.">
   <meta name="robots" content="index, follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ════ NAVBAR ════ -->
-<nav class="navbar">
-  <div class="navbar__inner">
-    <a href="index.html" class="navbar__brand">
-      <img src="logo_official.svg" alt="Massive Delete Gmail logo" width="36" height="36">
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="logo_official.svg" alt="Logo" width="30" height="30">
       Massive Delete Gmail
     </a>
-    <button class="navbar__toggle" onclick="document.querySelector('.navbar__links').classList.toggle('open')" aria-label="Menu">
+    <button class="nav__toggle" onclick="document.querySelector('.nav__links').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
-    <ul class="navbar__links">
+    <ul class="nav__links">
       <li><a href="index.html">Home</a></li>
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="terms.html">Terms</a></li>
@@ -29,117 +29,138 @@
   </div>
 </nav>
 
-<!-- ════ HERO ════ -->
+<!-- Hero -->
 <section class="hero">
-  <img src="logo_official.svg" alt="Massive Delete Gmail" class="hero__logo">
-  <h1 class="hero__title">Clean your inbox.<br><span>Massively.</span></h1>
-  <p class="hero__sub">Delete thousands of unwanted Gmail emails in seconds. Fast, secure, and powered by Google Apps Script — no passwords stored, ever.</p>
-  <a href="#contact" class="hero__cta">Get Started Free</a>
+  <div class="hero__content">
+    <span class="hero__badge">Free &amp; open tool</span>
+    <h1 class="hero__title">You don't need 47,000&nbsp;unread&nbsp;emails.</h1>
+    <p class="hero__desc">Search by sender, preview what matches, and wipe them out — permanently. Runs on Google's own servers. We never see your password or store your emails.</p>
+    <a href="#pricing" class="hero__cta">See plans</a>
+    <small class="hero__note">No credit card needed. Free tier available.</small>
+  </div>
+  <div class="hero__visual">
+    <img src="logo_official.svg" alt="Massive Delete Gmail" width="200" height="200">
+  </div>
 </section>
 
-<!-- ════ HOW IT WORKS ════ -->
-<section class="section" id="how-it-works">
-  <h2 class="section__title">How It Works</h2>
-  <p class="section__sub">Three simple steps to reclaim your inbox. No installs, no browser extensions — everything runs inside Google's own infrastructure.</p>
+<hr class="divider">
+
+<!-- How it works -->
+<section class="sect" id="how-it-works">
+  <p class="sect__label">How it works</p>
+  <h2 class="sect__heading">Three steps. No installs.</h2>
+  <p class="sect__sub">Everything runs inside Google Apps Script — the same infrastructure that powers Google Sheets macros. Nothing is installed on your computer.</p>
+
   <div class="steps">
     <div class="step">
-      <div class="step__icon">🔑</div>
-      <h3 class="step__title">1. Authorize</h3>
-      <p class="step__text">Sign in with your Google account. We use OAuth 2.0 — your password is never shared with us.</p>
+      <div class="step__num">1</div>
+      <h3 class="step__title">Sign in with Google</h3>
+      <p class="step__text">Standard OAuth 2.0 flow. You're authenticating with Google directly — we never touch your password.</p>
     </div>
     <div class="step">
-      <div class="step__icon">🔍</div>
-      <h3 class="step__title">2. Search & Preview</h3>
-      <p class="step__text">Enter sender names or addresses. Preview matching emails before any deletion — always stay in control.</p>
+      <div class="step__num">2</div>
+      <h3 class="step__title">Type a sender, hit search</h3>
+      <p class="step__text">Enter one or more sender names. You'll see a preview of every matching email before anything is deleted.</p>
     </div>
     <div class="step">
-      <div class="step__icon">🗑️</div>
-      <h3 class="step__title">3. Delete in Bulk</h3>
-      <p class="step__text">Confirm and permanently delete all matched emails. Thousands of messages cleaned up in seconds.</p>
+      <div class="step__num">3</div>
+      <h3 class="step__title">Confirm and delete</h3>
+      <p class="step__text">Review the list, click delete. Emails are removed permanently — no limbo, no trash folder, just gone.</p>
     </div>
   </div>
 </section>
 
-<!-- ════ SECURITY & PRIVACY ════ -->
-<div class="section--alt">
-  <section class="section" id="security">
-    <h2 class="section__title">Security &amp; Privacy</h2>
-    <p class="section__sub">Your data safety is our top priority. Here's how we keep it protected.</p>
-    <div class="security-grid">
-      <div class="security-card">
-        <div class="security-card__icon">🔒</div>
-        <h3 class="security-card__title">Google OAuth 2.0</h3>
-        <p class="security-card__text">Authentication is handled entirely by Google. We never see or store your password.</p>
+<!-- Trust / Security -->
+<div class="sect--tinted">
+  <section class="sect" id="security">
+    <p class="sect__label">Why trust this?</p>
+    <h2 class="sect__heading">We built it for ourselves first.</h2>
+    <p class="sect__sub">This tool started as a personal script to clean a Gmail account with 80,000+ promotional emails. The security model is simple: we don't want your data, and we architected it that way.</p>
+
+    <div class="trust">
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3 class="trust__title">Google handles authentication</h3>
+        <p class="trust__text">OAuth 2.0 means your password goes to Google, not to us. We receive a scoped token — that's it.</p>
       </div>
-      <div class="security-card">
-        <div class="security-card__icon">🚫</div>
-        <h3 class="security-card__title">No Email Storage</h3>
-        <p class="security-card__text">We do not read, store, or copy your email content. Emails are processed in real-time for deletion only.</p>
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+        </div>
+        <h3 class="trust__title">Emails are never stored</h3>
+        <p class="trust__text">We process in real-time to execute your request. When the session ends, nothing is retained. No database, no cache, no copies.</p>
       </div>
-      <div class="security-card">
-        <div class="security-card__icon">📊</div>
-        <h3 class="security-card__title">Minimal Logs</h3>
-        <p class="security-card__text">We only log timestamps and aggregate metrics (e.g., number of emails deleted). No personal data is retained.</p>
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="trust__title">Runs on Google's servers</h3>
+        <p class="trust__text">The code executes inside Google Apps Script's sandbox. Your data stays within Google's infrastructure at all times.</p>
       </div>
-      <div class="security-card">
-        <div class="security-card__icon">↩️</div>
-        <h3 class="security-card__title">Revoke Anytime</h3>
-        <p class="security-card__text">Remove access at any time via Google Account → Security → Third-party access. One click, done.</p>
+      <div class="trust__item">
+        <div class="trust__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round"><path d="M9 14l-4 4m0 0l4-4m-4 4V10a4 4 0 014-4h2"/><path d="M15 10l4-4m0 0l-4 4m4-4v8a4 4 0 01-4 4h-2"/></svg>
+        </div>
+        <h3 class="trust__title">Revoke access anytime</h3>
+        <p class="trust__text">Go to Google Account &rarr; Security &rarr; Third-party access, and remove us. One click, instant.</p>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ════ PRICING ════ -->
-<section class="section" id="pricing">
-  <h2 class="section__title">Pricing</h2>
-  <p class="section__sub">Start free. Upgrade when you need more power.</p>
-  <div class="pricing-grid" style="max-width:640px;margin:0 auto;">
-    <!-- Free -->
-    <div class="price-card">
-      <h3 class="price-card__name">Free</h3>
-      <div class="price-card__price">$0<span>/mo</span></div>
-      <p class="price-card__desc">Perfect for personal cleanup</p>
-      <ul class="price-card__features">
+<!-- Pricing -->
+<section class="sect" id="pricing">
+  <p class="sect__label">Pricing</p>
+  <h2 class="sect__heading">Keep it simple.</h2>
+  <p class="sect__sub">The free plan handles most use cases. Pro removes limits and adds automation for people who want hands-off inbox maintenance.</p>
+
+  <div class="pricing">
+    <div class="plan">
+      <p class="plan__name">Free</p>
+      <div class="plan__price">$0 <span>forever</span></div>
+      <p class="plan__desc">One-time cleanups, done manually.</p>
+      <ul class="plan__list">
         <li>Up to 500 deletions per run</li>
         <li>Search by sender name or email</li>
-        <li>Preview emails before deleting</li>
+        <li>Preview before deleting</li>
         <li>Community support</li>
       </ul>
-      <a href="#contact" class="price-card__btn">Get Started</a>
+      <a href="#contact" class="plan__btn">Get started</a>
     </div>
-    <!-- Pro -->
-    <div class="price-card price-card--featured">
-      <h3 class="price-card__name">Pro</h3>
-      <div class="price-card__price">$9<span>/mo</span></div>
-      <p class="price-card__desc">For power users &amp; heavy inboxes</p>
-      <ul class="price-card__features">
+    <div class="plan plan--accent">
+      <span class="plan__tag">Pro</span>
+      <p class="plan__name">Pro</p>
+      <div class="plan__price">$9 <span>/month</span></div>
+      <p class="plan__desc">For heavy inboxes that need ongoing cleanup.</p>
+      <ul class="plan__list">
         <li>Unlimited deletions per run</li>
         <li>Unsubscribe automation</li>
         <li>Auto-block sender filters</li>
         <li>Priority email support</li>
       </ul>
-      <a href="#contact" class="price-card__btn">Choose Pro</a>
+      <a href="#contact" class="plan__btn">Choose Pro</a>
     </div>
   </div>
 </section>
 
-<!-- ════ CTA / CONTACT ════ -->
-<section class="cta-section" id="contact">
-  <h2 class="cta-section__title">Ready to clean your inbox?</h2>
-  <p class="cta-section__text">Questions, feedback, or partnership inquiries — we'd love to hear from you.</p>
-  <a href="mailto:augustolima04@gmail.com" class="cta-section__btn">Contact Us →</a>
+<!-- CTA -->
+<section class="cta-band" id="contact">
+  <p class="cta-band__text">Questions? Feedback? Just reply to this email.</p>
+  <p class="cta-band__sub">We read everything. No ticket system, no bots.</p>
+  <a href="mailto:augustolima04@gmail.com" class="cta-band__btn">augustolima04@gmail.com</a>
 </section>
 
-<!-- ════ FOOTER ════ -->
+<!-- Footer -->
 <footer class="footer">
-  <div class="footer__links">
+  <div class="footer__row">
     <a href="index.html">Home</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-    <a href="mailto:augustolima04@gmail.com">augustolima04@gmail.com</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="mailto:augustolima04@gmail.com">Contact</a>
   </div>
-  <p>&copy; 2026 Massive Delete Gmail. All rights reserved.</p>
+  <p>&copy; 2026 Massive Delete Gmail</p>
 </footer>
 
 </body>
