@@ -200,7 +200,7 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 600px) { .trust { grid-template-columns: 1fr; } }
 
 /* ── Pricing ── */
-.pricing { display: flex; gap: 24px; max-width: 620px; }
+.pricing { display: flex; gap: 24px; max-width: 620px; margin: 0 auto; }
 .plan {
   flex: 1; padding: 28px 24px;
   border: 1px solid var(--border);
