@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="451.87845"
+   height="451.30914"
+   viewBox="0 -31.5 144.60111 144.41893"
+   version="1.1"
+   preserveAspectRatio="xMidYMid"
+   id="svg282"
+   sodipodi:docname="logo_official.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="logo_official.png"
+   inkscape:export-xdpi="74.356277"
+   inkscape:export-ydpi="74.356277"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs286">
+    <linearGradient
+       id="trashGrad"
+       x1="-2"
+       y1="-2"
+       x2="-2"
+       y2="122"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#D93025"
+         id="stop13" />
+      <stop
+         offset="100%"
+         stop-color="#A50E0E"
+         id="stop15" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="namedview284"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:lockguides="true"
+     inkscape:zoom="1.03625"
+     inkscape:cx="258.14234"
+     inkscape:cy="140.41013"
+     inkscape:window-width="1895"
+     inkscape:window-height="968"
+     inkscape:window-x="4"
+     inkscape:window-y="20"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg282" />
+  <g
+     transform="matrix(1.0619039,0,0,1.0619039,8.4952312,-23.004769)"
+     id="g83">
+    <!-- Badge circle background -->
+    <circle
+       cx="60"
+       cy="60"
+       r="68"
+       fill="#ffffff"
+       opacity="0.95"
+       id="circle67" />
+    <circle
+       cx="60"
+       cy="60"
+       r="62"
+       fill="url(#trashGrad)"
+       id="circle69"
+       style="fill:url(#trashGrad)" />
+    <!-- Trash can icon (white) -->
+    <!-- Lid -->
+    <rect
+       x="9.1672993"
+       y="44.149464"
+       width="60"
+       height="8"
+       rx="3"
+       fill="#ffffff"
+       id="rect71"
+       transform="rotate(-30)" />
+    <!-- Lid handle -->
+    <rect
+       x="27.167299"
+       y="36.149464"
+       width="24"
+       height="10"
+       rx="4"
+       fill="none"
+       stroke="#ffffff"
+       stroke-width="4"
+       id="rect73"
+       transform="rotate(-30)" />
+    <!-- Body -->
+    <path
+       d="m 34,42 4,50 c 0.5,4 3,6 6,6 h 32 c 3,0 5.5,-2 6,-6 l 4,-50 z"
+       fill="none"
+       stroke="#ffffff"
+       stroke-width="5"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path75" />
+    <!-- Trash lines inside -->
+    <line
+       x1="50"
+       y1="52"
+       x2="50"
+       y2="88"
+       stroke="#ffffff"
+       stroke-width="4"
+       stroke-linecap="round"
+       id="line77" />
+    <line
+       x1="60"
+       y1="52"
+       x2="60"
+       y2="88"
+       stroke="#ffffff"
+       stroke-width="4"
+       stroke-linecap="round"
+       id="line79" />
+    <line
+       x1="70"
+       y1="52"
+       x2="70"
+       y2="88"
+       stroke="#ffffff"
+       stroke-width="4"
+       stroke-linecap="round"
+       id="line81" />
+  </g>
+  <g
+     id="g280"
+     transform="matrix(0.20060761,-0.05375265,0.05375265,0.20060761,83.736153,-0.2433156)">
+    <path
+       d="M 58.181818,192.04952 V 93.140424 L 27.506623,65.077009 0,49.504061 V 174.59497 c 0,9.65818 7.8254545,17.45455 17.454545,17.45455 z"
+       fill="#4285f4"
+       id="path270" />
+    <path
+       d="m 197.81818,192.04952 h 40.72727 c 9.65819,0 17.45455,-7.82546 17.45455,-17.45455 V 49.504061 l -31.15559,17.838216 -27.02623,25.798147 z"
+       fill="#34a853"
+       id="path272" />
+    <polygon
+       fill="#ea4335"
+       points="128,69.867697 197.81818,17.504061 202.48749,52.496009 197.81818,93.140424 128,145.50406 58.181818,93.140424 54.007762,54.493283 58.181818,17.504061 "
+       id="polygon274" />
+    <path
+       d="M 197.81818,17.504061 V 93.140424 L 256,49.504061 V 26.231334 C 256,4.645879 231.36,-7.6595756 214.10909,5.285879 Z"
+       fill="#fbbc04"
+       id="path276" />
+    <path
+       d="M 0,49.504061 26.758805,69.573165 58.181818,93.140424 V 17.504061 L 41.890909,5.285879 C 24.610909,-7.6595756 0,4.645879 0,26.231334 Z"
+       fill="#c5221f"
+       id="path278" />
+  </g>
+</svg>
