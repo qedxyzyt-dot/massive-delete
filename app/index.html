@@ -2,20 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=https://accounts.google.com/AddSession?continue=https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg%2Fexec">
-  <title>Redirecting to Massive Delete Gmail...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Massive Delete Gmail — Choose Account</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f5f4f1; color: #1a1a1a; }
-    .box { text-align: center; }
-    .box p { color: #737373; margin-top: 8px; }
-    a { color: #c0392b; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f4f1;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 40px 36px 36px;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .logo { width: 56px; height: 56px; margin-bottom: 18px; }
+    h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #c0392b;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #737373;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+    .btn-choose {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px 24px;
+      background: #3367d6;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(51,103,214,0.18);
+    }
+    .btn-choose:hover { background: #2a56b8; box-shadow: 0 4px 16px rgba(51,103,214,0.25); }
+    .btn-choose svg { flex-shrink: 0; }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: #bbb;
+      font-size: 12px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e0e0e0;
+    }
+    .btn-direct {
+      display: block;
+      width: 100%;
+      padding: 13px 24px;
+      background: transparent;
+      color: #3367d6;
+      font-size: 14px;
+      font-weight: 600;
+      border: 2px solid #dde3ed;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+      text-align: center;
+    }
+    .btn-direct:hover { background: #f0f4ff; border-color: #3367d6; }
+    .note {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 20px;
+      line-height: 1.4;
+    }
+    .note a { color: #999; }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Opening Massive Delete Gmail...</h2>
-    <p>If you're not redirected, <a href="https://accounts.google.com/AddSession?continue=https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg%2Fexec">click here</a>.</p>
+  <div class="card">
+    <img class="logo" src="../logo_official.svg" alt="Massive Delete Gmail">
+    <h1 id="title">Choose your Google account</h1>
+    <p class="subtitle" id="subtitle">Select which Google account you'd like to use with Massive Delete Gmail.</p>
+
+    <a class="btn-choose" id="btnChoose" href="#">
+      <!-- Google icon -->
+      <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+      </svg>
+      <span id="btnChooseText">Choose account</span>
+    </a>
+
+    <div class="divider"><span id="orText">or</span></div>
+
+    <a class="btn-direct" id="btnDirect" href="#">
+      <span id="btnDirectText">Open directly (single account)</span>
+    </a>
+
+    <p class="note" id="note">
+      <span id="noteText">If you only have one Google account logged in, use "Open directly". If you have multiple accounts, use "Choose account" to avoid errors.</span>
+    </p>
   </div>
+
+  <script>
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg/exec';
+    var CHOOSER_URL = 'https://accounts.google.com/AccountChooser?continue=' + encodeURIComponent(SCRIPT_URL);
+
+    document.getElementById('btnChoose').href = CHOOSER_URL;
+    document.getElementById('btnDirect').href = SCRIPT_URL;
+
+    // i18n
+    var lang = (navigator.language || '').slice(0,2);
+    var i18n = {
+      pt: {
+        title: 'Escolha sua conta Google',
+        subtitle: 'Selecione qual conta Google deseja usar com o Massive Delete Gmail.',
+        btnChoose: 'Escolher conta',
+        or: 'ou',
+        btnDirect: 'Abrir direto (conta única)',
+        note: 'Se você só tem uma conta Google logada, use "Abrir direto". Se tem várias contas, use "Escolher conta" para evitar erros.'
+      },
+      en: {
+        title: 'Choose your Google account',
+        subtitle: 'Select which Google account you\'d like to use with Massive Delete Gmail.',
+        btnChoose: 'Choose account',
+        or: 'or',
+        btnDirect: 'Open directly (single account)',
+        note: 'If you only have one Google account logged in, use "Open directly". If you have multiple accounts, use "Choose account" to avoid errors.'
+      },
+      es: {
+        title: 'Elige tu cuenta de Google',
+        subtitle: 'Selecciona qué cuenta de Google deseas usar con Massive Delete Gmail.',
+        btnChoose: 'Elegir cuenta',
+        or: 'o',
+        btnDirect: 'Abrir directo (cuenta única)',
+        note: 'Si solo tienes una cuenta de Google, usa "Abrir directo". Si tienes varias cuentas, usa "Elegir cuenta" para evitar errores.'
+      }
+    };
+
+    var t = i18n[lang] || i18n['en'];
+    document.getElementById('title').textContent = t.title;
+    document.getElementById('subtitle').textContent = t.subtitle;
+    document.getElementById('btnChooseText').textContent = t.btnChoose;
+    document.getElementById('orText').textContent = t.or;
+    document.getElementById('btnDirectText').textContent = t.btnDirect;
+    document.getElementById('noteText').textContent = t.note;
+  </script>
 </body>
 </html>
