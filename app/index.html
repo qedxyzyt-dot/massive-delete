@@ -89,7 +89,7 @@
     <h1 id="title">Open Massive Delete Gmail</h1>
     <p class="subtitle" id="subtitle">Click below to open the app.</p>
 
-    <!-- Primary: ?authuser=0 (pins Google to first account, prevents /u/N/ rewrite) -->
+    <!-- Primary: plain URL (works for single-account users) -->
     <a class="btn-primary" id="btnOpen" href="#">
       <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
@@ -128,29 +128,32 @@
   <script>
     /* ═══════════════════════════════════════════════════
        CONFIG
-       ?authuser=N pins the Google account index and stops
-       Google from rewriting the path to /u/N/.
-       See: https://stackoverflow.com/a/78498122
+       /u/N/ goes RIGHT AFTER the domain, before /macros/.
+       Correct:  script.google.com /u/0/ macros/s/ID/exec
+       Wrong:    script.google.com/macros /u/0/ s/ID/exec
        ═══════════════════════════════════════════════════ */
     var DEPLOY_ID = 'AKfycbyVQc93W-yMTAvOW-GhNwmMjtMuxGLW-jB4GFRlDBu3tq8GB2rqXWtCTTYhcEXatdTl8w';
     var BASE_URL  = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
 
-    // ?authuser=0 → first Google account (most common)
-    function authUrl(n) { return BASE_URL + '?authuser=' + n; }
+    // /u/N/ variant — tells Google which logged-in account to use
+    function slotUrl(n) {
+      return 'https://script.google.com/u/' + n + '/macros/s/' + DEPLOY_ID + '/exec';
+    }
 
     /* ═══════════════════════════════════════════════════
-       PRIMARY BUTTON — uses ?authuser=0 by default
+       PRIMARY BUTTON — plain URL (works for most users)
        ═══════════════════════════════════════════════════ */
-    document.getElementById('btnOpen').href = authUrl(0);
+    document.getElementById('btnOpen').href = BASE_URL;
 
     /* ═══════════════════════════════════════════════════
-       ACCOUNT GRID — ?authuser=0 through ?authuser=5
+       ACCOUNT GRID — /u/0/ through /u/5/
+       Uses: script.google.com/u/N/macros/s/ID/exec
        ═══════════════════════════════════════════════════ */
     var grid = document.getElementById('accountGrid');
     for (var i = 0; i < 6; i++) {
       var a = document.createElement('a');
       a.className = 'account-btn';
-      a.href = authUrl(i);
+      a.href = slotUrl(i);
       a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span>'
                    + '<span class="acc-label lbl-' + i + '"></span>';
       grid.appendChild(a);
