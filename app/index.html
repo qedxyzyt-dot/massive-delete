@@ -22,7 +22,7 @@
       border: 1px solid #e0e0e0;
       border-radius: 16px;
       padding: 40px 36px 36px;
-      max-width: 460px;
+      max-width: 500px;
       width: 100%;
       text-align: center;
       box-shadow: 0 4px 24px rgba(0,0,0,0.07);
@@ -40,10 +40,28 @@
       box-shadow: 0 2px 8px rgba(51,103,214,0.18);
     }
     .btn-primary:hover { background: #2a56b8; box-shadow: 0 4px 16px rgba(51,103,214,0.25); }
+    .btn-primary:disabled, .btn-primary[disabled] { opacity: 0.6; cursor: wait; }
     .btn-primary svg { flex-shrink: 0; }
 
-    /* ── Trouble section ── */
-    .trouble { margin-top: 28px; border-top: 1px solid #eee; padding-top: 20px; }
+    /* ── Status ── */
+    .status {
+      margin-top: 16px; padding: 12px 16px;
+      border-radius: 8px; font-size: 13px; line-height: 1.5;
+      display: none;
+    }
+    .status.detecting { display: block; background: #e8f0fe; color: #1a73e8; border: 1px solid #c5d9f7; }
+    .status.success   { display: block; background: #e6f4ea; color: #137333; border: 1px solid #b7dfc3; }
+    .status.failed    { display: block; background: #fce8e6; color: #c5221f; border: 1px solid #f5c6c0; }
+    .spinner-sm {
+      display: inline-block; width: 14px; height: 14px;
+      border: 2px solid currentColor; border-top-color: transparent;
+      border-radius: 50%; animation: spin 0.7s linear infinite;
+      vertical-align: middle; margin-right: 6px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Trouble ── */
+    .trouble { margin-top: 24px; border-top: 1px solid #eee; padding-top: 20px; }
     .trouble-toggle {
       display: inline-flex; align-items: center; gap: 6px;
       background: none; border: none; color: #3367d6;
@@ -53,7 +71,6 @@
     .trouble-toggle:hover { background: #f0f4ff; }
     .trouble-toggle .arrow { transition: transform 0.2s; font-size: 10px; }
     .trouble-toggle.open .arrow { transform: rotate(180deg); }
-
     .trouble-body { display: none; margin-top: 16px; text-align: left; }
     .trouble-body.open { display: block; }
     .trouble-body p { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 14px; }
@@ -64,8 +81,7 @@
     .account-btn {
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       padding: 14px 8px; background: #f7f8fa; border: 2px solid #e0e0e0;
-      border-radius: 10px; cursor: pointer; text-decoration: none;
-      transition: all 0.15s; color: #1a1a1a;
+      border-radius: 10px; cursor: pointer; text-decoration: none; transition: all 0.15s; color: #1a1a1a;
     }
     .account-btn:hover { border-color: #3367d6; background: #f0f4ff; box-shadow: 0 2px 8px rgba(51,103,214,0.12); }
     .account-btn .acc-icon {
@@ -74,33 +90,26 @@
       font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 6px;
     }
     .account-btn .acc-label { font-size: 12px; font-weight: 600; color: #555; }
+    .c0{background:#4285f4} .c1{background:#ea4335} .c2{background:#fbbc05;color:#333!important}
+    .c3{background:#34a853} .c4{background:#ff6d01} .c5{background:#46bdc6}
 
+    /* ── Tip & copy ── */
+    .tip-box { background:#fffde7;border:1px solid #ffe082;border-radius:8px;padding:12px 14px;margin-top:14px;text-align:left }
+    .tip-box p{font-size:12px;color:#6d5c00;line-height:1.5;margin:0} .tip-box strong{color:#e65100}
+    .copy-row { display:flex; gap:8px; margin-top:14px; align-items:center; }
+    .copy-input { flex:1; padding:8px 12px; font-size:12px; font-family:monospace; border:1px solid #ddd; border-radius:6px; background:#f9f9f9; color:#333; overflow:hidden; text-overflow:ellipsis; }
+    .copy-btn { padding:8px 14px; font-size:12px; font-weight:600; background:#f0f0f0; border:1px solid #ddd; border-radius:6px; cursor:pointer; transition:background .15s; white-space:nowrap; }
+    .copy-btn:hover{background:#e0e0e0} .copy-btn.copied{background:#e6f4ea;border-color:#b7dfc3;color:#137333}
     .note { font-size: 11px; color: #aaa; margin-top: 16px; line-height: 1.4; }
-
-    .c0 { background: #4285f4; } .c1 { background: #ea4335; }
-    .c2 { background: #fbbc05; color: #333 !important; } .c3 { background: #34a853; }
-    .c4 { background: #ff6d01; } .c5 { background: #46bdc6; }
-
-    /* ── Incognito tip ── */
-    .tip-box {
-      background: #fffde7; border: 1px solid #ffe082; border-radius: 8px;
-      padding: 12px 14px; margin-top: 14px; text-align: left;
-    }
-    .tip-box p { font-size: 12px; color: #6d5c00; line-height: 1.5; margin: 0; }
-    .tip-box strong { color: #e65100; }
-    .tip-box code {
-      background: #fff8e1; padding: 1px 5px; border-radius: 3px;
-      font-size: 11px; font-family: monospace;
-    }
   </style>
 </head>
 <body>
   <div class="card">
     <img class="logo" src="../logo_official.svg" alt="Massive Delete Gmail">
     <h1 id="title">Open Massive Delete Gmail</h1>
-    <p class="subtitle" id="subtitle">Click below to open the app.</p>
+    <p class="subtitle" id="subtitle">Click below to open the app. We'll find the right account automatically.</p>
 
-    <a class="btn-primary" id="btnOpen" href="#">
+    <button class="btn-primary" id="btnOpen" onclick="handleOpen()">
       <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
         <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -108,28 +117,28 @@
         <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
       </svg>
       <span id="btnOpenText">Open App</span>
-    </a>
+    </button>
 
-    <!-- ── Direct link (single account users) ── -->
-    <div style="margin-top:16px;">
-      <a id="directLink" href="#" style="font-size:13px; color:#3367d6; text-decoration:none; font-weight:600;">
-        <span id="directLinkText">Single account? Open directly</span> &rarr;
-      </a>
-    </div>
+    <div class="status" id="statusBox"></div>
 
-    <!-- ── Trouble? ── -->
+    <!-- ── Trouble section ── -->
     <div class="trouble">
       <button class="trouble-toggle" id="troubleToggle" onclick="toggleTrouble()">
-        <span id="troubleLabel">Seeing a Google Drive error?</span>
+        <span id="troubleLabel">Still not working?</span>
         <span class="arrow">&#x25BC;</span>
       </button>
       <div class="trouble-body" id="troubleBody">
-        <p id="troubleDesc">If you have multiple Google accounts logged in, Google may not know which one to use. Pick your account slot below:</p>
+        <p id="troubleDesc">If auto-detection doesn't work, try picking your Google account slot manually:</p>
         <div class="account-grid" id="accountGrid"></div>
-        <p class="hint" id="troubleHint">Try each one until the app opens correctly.</p>
+        <p class="hint" id="troubleHint">Try each until the app opens.</p>
 
         <div class="tip-box">
-          <p id="tipText"><strong>Tip:</strong> If none of the buttons above work, open an <strong>incognito/private window</strong> and paste the direct link. That always works because there's only one account session.</p>
+          <p id="tipText"><strong>Guaranteed fix:</strong> Open an <strong>incognito window</strong> (Ctrl+Shift+N) and paste the link below. Always works.</p>
+        </div>
+
+        <div class="copy-row">
+          <input type="text" class="copy-input" id="copyInput" readonly>
+          <button class="copy-btn" id="copyBtn" onclick="doCopy()"><span id="copyBtnText">Copy</span></button>
         </div>
       </div>
     </div>
@@ -138,83 +147,195 @@
   </div>
 
   <script>
-    // The deploy ID
-    var DEPLOY_ID = 'AKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg';
-
-    // Direct script URL
+    /* ═══════════════════════════════════════════════════
+       CONFIG — uses the NEW deployment ID (fresh access settings)
+       ═══════════════════════════════════════════════════ */
+    var DEPLOY_ID = 'AKfycbyVQc93W-yMTAvOW-GhNwmMjtMuxGLW-jB4GFRlDBu3tq8GB2rqXWtCTTYhcEXatdTl8w';
     var SCRIPT_URL = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
+    var PROBE_TIMEOUT = 4000;
 
-    // AccountChooser URL — forces user to pick an account first, avoids /u/N/ routing bug
-    var CHOOSER_URL = 'https://accounts.google.com/AccountChooser?continue=' + encodeURIComponent(SCRIPT_URL);
-
-    // Account-specific URL using /u/N/ path (fallback for troubleshooting)
-    function accountUrl(n) {
+    function slotUrl(n) {
       return 'https://script.google.com/macros/u/' + n + '/s/' + DEPLOY_ID + '/exec';
     }
 
-    // Primary button: AccountChooser (most reliable for multi-account users)
-    document.getElementById('btnOpen').href = CHOOSER_URL;
+    /* ═══════════════════════════════════════════════════
+       JSONP PROBE — detect which /u/N/ URL actually reaches
+       the Apps Script (works for users who already authorized).
+       The script's doGet() returns "callbackName()" as JS.
+       ═══════════════════════════════════════════════════ */
+    function probeUrl(url) {
+      return new Promise(function(resolve) {
+        var cb = '__p_' + Math.random().toString(36).slice(2);
+        var done = false;
+        var timer = setTimeout(finish.bind(null, false), PROBE_TIMEOUT);
 
-    // Build account grid (0-5)
-    var grid = document.getElementById('accountGrid');
-    for (var i = 0; i < 6; i++) {
-      var a = document.createElement('a');
-      a.className = 'account-btn';
-      a.href = accountUrl(i);
-      a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span>'
-                   + '<span class="acc-label"><span class="aw">' + ordinal(i) + '</span></span>';
-      grid.appendChild(a);
+        window[cb] = function() { finish(true); };
+
+        var s = document.createElement('script');
+        s.src = url + '?ping=' + cb;
+        s.onerror = function() { finish(false); };
+        document.head.appendChild(s);
+
+        function finish(ok) {
+          if (done) return; done = true;
+          clearTimeout(timer);
+          try { delete window[cb]; } catch(e) {}
+          try { s.parentNode.removeChild(s); } catch(e) {}
+          resolve(ok ? url : null);
+        }
+      });
     }
 
-    function ordinal(i) {
-      var labels = { en: ['1st','2nd','3rd','4th','5th','6th'], pt: ['1ª','2ª','3ª','4ª','5ª','6ª'], es: ['1ª','2ª','3ª','4ª','5ª','6ª'] };
-      var l = labels[lang] || labels['en'];
-      return l[i] + ' ' + (t ? t.accWord : 'Account');
+    /* Probe ALL URLs in parallel, resolve with the first that works */
+    function probeAll() {
+      var urls = [SCRIPT_URL];
+      for (var i = 0; i < 6; i++) urls.push(slotUrl(i));
+
+      return Promise.all(urls.map(probeUrl)).then(function(results) {
+        for (var i = 0; i < results.length; i++) {
+          if (results[i]) return results[i];
+        }
+        return null;
+      });
     }
 
+    /* ═══════════════════════════════════════════════════
+       SMART OPEN — auto-detect + fallback chain
+       ═══════════════════════════════════════════════════ */
+    var detectedUrl = null;
+
+    function handleOpen() {
+      /* Already detected → go directly */
+      if (detectedUrl) {
+        window.location.href = detectedUrl;
+        return;
+      }
+
+      var btn = document.getElementById('btnOpen');
+      btn.disabled = true;
+      setStatus('detecting', t.detecting);
+
+      probeAll().then(function(url) {
+        btn.disabled = false;
+
+        if (url) {
+          detectedUrl = url;
+          setStatus('success', t.found);
+          setTimeout(function() { window.location.href = url; }, 500);
+        } else {
+          /* No probe worked — try AccountChooser in new tab as fallback */
+          setStatus('failed', t.notFound);
+
+          /* Auto-expand trouble section */
+          var body = document.getElementById('troubleBody');
+          if (!body.classList.contains('open')) toggleTrouble();
+
+          /* Open AccountChooser in a new tab */
+          setTimeout(function() {
+            window.open(
+              'https://accounts.google.com/AccountChooser?continue=' + encodeURIComponent(SCRIPT_URL),
+              '_blank'
+            );
+          }, 1500);
+        }
+      });
+    }
+
+    function setStatus(cls, msg) {
+      var el = document.getElementById('statusBox');
+      el.className = 'status ' + cls;
+      el.innerHTML = (cls === 'detecting' ? '<span class="spinner-sm"></span> ' : '') + msg;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       UI helpers
+       ═══════════════════════════════════════════════════ */
     function toggleTrouble() {
       document.getElementById('troubleToggle').classList.toggle('open');
       document.getElementById('troubleBody').classList.toggle('open');
     }
 
-    // ── i18n ──
+    function doCopy() {
+      var inp = document.getElementById('copyInput');
+      inp.select();
+      navigator.clipboard.writeText(inp.value).then(function() {
+        var b = document.getElementById('copyBtn');
+        b.classList.add('copied');
+        document.getElementById('copyBtnText').textContent = '\u2713 ' + (t.copied || 'Copied');
+        setTimeout(function() {
+          b.classList.remove('copied');
+          document.getElementById('copyBtnText').textContent = t.copy || 'Copy';
+        }, 2000);
+      });
+    }
+
+    /* ═══════════════════════════════════════════════════
+       BUILD ACCOUNT GRID
+       ═══════════════════════════════════════════════════ */
+    (function() {
+      var grid = document.getElementById('accountGrid');
+      for (var i = 0; i < 6; i++) {
+        var a = document.createElement('a');
+        a.className = 'account-btn';
+        a.href = slotUrl(i);
+        a.target = '_blank';
+        a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span>'
+                     + '<span class="acc-label lbl-' + i + '"></span>';
+        grid.appendChild(a);
+      }
+    })();
+
+    document.getElementById('copyInput').value = SCRIPT_URL;
+
+    /* ═══════════════════════════════════════════════════
+       i18n
+       ═══════════════════════════════════════════════════ */
     var lang = (navigator.language || '').slice(0, 2);
     var i18n = {
       pt: {
         title: 'Abrir Massive Delete Gmail',
-        subtitle: 'Clique abaixo para abrir o app.',
+        subtitle: 'Clique abaixo para abrir o app. Vamos encontrar a conta certa automaticamente.',
         btnOpen: 'Abrir App',
-        directLink: 'Conta única? Abrir direto',
-        troubleLabel: 'Apareceu um erro do Google Drive?',
-        troubleDesc: 'Se você tem várias contas Google logadas, o Google pode não saber qual usar. Escolha o número da sua conta abaixo:',
-        troubleHint: 'Tente cada uma até o app abrir corretamente.',
+        troubleLabel: 'Ainda n\u00e3o funcionou?',
+        troubleDesc: 'Se a detec\u00e7\u00e3o autom\u00e1tica n\u00e3o funcionar, tente escolher o slot da sua conta manualmente:',
+        troubleHint: 'Tente cada uma at\u00e9 o app abrir.',
         accWord: 'Conta',
-        tip: '',
-        note: 'Powered by Google Apps Script. Nunca vemos sua senha.'
+        note: 'Powered by Google Apps Script. Nunca vemos sua senha.',
+        detecting: 'Detectando a conta correta\u2026',
+        found: '\u2713 Conta encontrada! Redirecionando\u2026',
+        notFound: 'Detec\u00e7\u00e3o n\u00e3o encontrou sess\u00e3o ativa. Abrindo seletor de contas\u2026',
+        copy: 'Copiar', copied: 'Copiado',
+        tip: '<strong>Solu\u00e7\u00e3o garantida:</strong> Abra uma <strong>janela an\u00f4nima</strong> (Ctrl+Shift+N) e cole o link abaixo. Funciona sempre.',
       },
       en: {
         title: 'Open Massive Delete Gmail',
-        subtitle: 'Click below to open the app.',
+        subtitle: 'Click below to open the app. We\'ll find the right account automatically.',
         btnOpen: 'Open App',
-        directLink: 'Single account? Open directly',
-        troubleLabel: 'Seeing a Google Drive error?',
-        troubleDesc: 'If you have multiple Google accounts logged in, Google may not know which one to use. Pick your account slot below:',
-        troubleHint: 'Try each one until the app opens correctly.',
+        troubleLabel: 'Still not working?',
+        troubleDesc: 'If auto-detection doesn\'t work, try picking your Google account slot manually:',
+        troubleHint: 'Try each until the app opens.',
         accWord: 'Account',
-        tip: '',
-        note: 'Powered by Google Apps Script. We never see your password.'
+        note: 'Powered by Google Apps Script. We never see your password.',
+        detecting: 'Detecting the right account\u2026',
+        found: '\u2713 Account found! Redirecting\u2026',
+        notFound: 'Auto-detection found no active session. Opening account chooser\u2026',
+        copy: 'Copy', copied: 'Copied',
+        tip: '<strong>Guaranteed fix:</strong> Open an <strong>incognito window</strong> (Ctrl+Shift+N) and paste the link below. Always works.',
       },
       es: {
         title: 'Abrir Massive Delete Gmail',
-        subtitle: 'Haga clic abajo para abrir la app.',
+        subtitle: 'Haga clic para abrir. Detectaremos la cuenta correcta.',
         btnOpen: 'Abrir App',
-        directLink: '¿Cuenta única? Abrir directo',
-        troubleLabel: '¿Aparece un error de Google Drive?',
-        troubleDesc: 'Si tiene varias cuentas de Google, es posible que Google no sepa cuál usar. Elija su cuenta abajo:',
-        troubleHint: 'Pruebe cada una hasta que la app se abra correctamente.',
+        troubleLabel: '\u00bfA\u00fan no funciona?',
+        troubleDesc: 'Si la detecci\u00f3n no funciona, elija su cuenta manualmente:',
+        troubleHint: 'Pruebe cada una hasta que abra.',
         accWord: 'Cuenta',
-        tip: '',
-        note: 'Powered by Google Apps Script. Nunca vemos tu contraseña.'
+        note: 'Powered by Google Apps Script. Nunca vemos tu contrase\u00f1a.',
+        detecting: 'Detectando la cuenta correcta\u2026',
+        found: '\u2713 \u00a1Cuenta encontrada! Redirigiendo\u2026',
+        notFound: 'No se encontr\u00f3 sesi\u00f3n activa. Abriendo selector de cuentas\u2026',
+        copy: 'Copiar', copied: 'Copiado',
+        tip: '<strong>Soluci\u00f3n garantizada:</strong> Abra una <strong>ventana de inc\u00f3gnito</strong> (Ctrl+Shift+N) y pegue el enlace. Siempre funciona.',
       }
     };
 
@@ -222,28 +343,28 @@
     document.getElementById('title').textContent = t.title;
     document.getElementById('subtitle').textContent = t.subtitle;
     document.getElementById('btnOpenText').textContent = t.btnOpen;
-    document.getElementById('directLink').href = SCRIPT_URL;
-    document.getElementById('directLinkText').textContent = t.directLink;
     document.getElementById('troubleLabel').textContent = t.troubleLabel;
     document.getElementById('troubleDesc').textContent = t.troubleDesc;
     document.getElementById('troubleHint').textContent = t.troubleHint;
     document.getElementById('noteText').textContent = t.note;
+    document.getElementById('tipText').innerHTML = t.tip;
+    document.getElementById('copyBtnText').textContent = t.copy;
 
-    // Localize tip box
-    var tipEl = document.getElementById('tipText');
-    if (lang === 'pt') {
-      tipEl.innerHTML = '<strong>Dica:</strong> Se nenhum botão acima funcionar, abra uma <strong>janela anônima/privada</strong> e acesse o link direto. Isso sempre funciona porque há apenas uma sessão de conta.';
-    } else if (lang === 'es') {
-      tipEl.innerHTML = '<strong>Consejo:</strong> Si ningún botón funciona, abra una <strong>ventana de incógnito/privada</strong> y acceda al enlace directo. Siempre funciona porque solo hay una sesión de cuenta.';
+    /* Account labels */
+    var ordinals = { en:['1st','2nd','3rd','4th','5th','6th'], pt:['1\u00aa','2\u00aa','3\u00aa','4\u00aa','5\u00aa','6\u00aa'], es:['1\u00aa','2\u00aa','3\u00aa','4\u00aa','5\u00aa','6\u00aa'] };
+    var ol = ordinals[lang] || ordinals['en'];
+    for (var k = 0; k < 6; k++) {
+      var el = document.querySelector('.lbl-' + k);
+      if (el) el.textContent = ol[k] + ' ' + t.accWord;
     }
 
-    // Update ordinal labels with localized text
-    var awEls = document.querySelectorAll('.aw');
-    var ordLabels = { en: ['1st','2nd','3rd','4th','5th','6th'], pt: ['1ª','2ª','3ª','4ª','5ª','6ª'], es: ['1ª','2ª','3ª','4ª','5ª','6ª'] };
-    var ol = ordLabels[lang] || ordLabels['en'];
-    for (var k = 0; k < awEls.length; k++) {
-      awEls[k].textContent = ol[k] + ' ' + t.accWord;
-    }
+    /* ═══════════════════════════════════════════════════
+       AUTO-PROBE on page load (background)
+       Pre-detects so button click is instant for returning users.
+       ═══════════════════════════════════════════════════ */
+    probeAll().then(function(url) {
+      if (url) detectedUrl = url;
+    });
   </script>
 </body>
 </html>
