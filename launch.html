@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Massive Delete Gmail — Abrindo...</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid #e0e0e0;
+      border-top-color: #c0392b;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 24px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #c0392b;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 15px;
+      color: #4a4a4a;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .countdown {
+      font-size: 13px;
+      color: #737373;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #c0392b;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+      margin-top: 12px;
+    }
+    .btn:hover { background: #922b21; }
+    .note {
+      font-size: 12px;
+      color: #999;
+      margin-top: 16px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="spinner" id="spinner"></div>
+    <h1 id="title">Abrindo o aplicativo...</h1>
+    <p id="desc">Você será redirecionado automaticamente em instantes.</p>
+    <p class="countdown" id="countdown"></p>
+    <a class="btn" id="manualBtn" style="display:none;" href="#">Abrir agora</a>
+    <p class="note" id="note">Se não for redirecionado, clique no botão abaixo.</p>
+  </div>
+
+  <script>
+    var APP_URL = 'https://script.google.com/macros/s/AKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg/exec';
+    var DELAY = 3; // seconds
+
+    // i18n
+    var lang = (navigator.language || '').slice(0,2);
+    var i18n = {
+      pt: {
+        title: 'Abrindo o aplicativo...',
+        desc: 'Você será redirecionado automaticamente em instantes.',
+        countdown: 'Redirecionando em {n} segundo(s)...',
+        btn: 'Abrir agora',
+        note: 'Se não for redirecionado, clique no botão abaixo.'
+      },
+      en: {
+        title: 'Opening the app...',
+        desc: 'You will be redirected automatically in a moment.',
+        countdown: 'Redirecting in {n} second(s)...',
+        btn: 'Open now',
+        note: 'If not redirected, click the button below.'
+      },
+      es: {
+        title: 'Abriendo la aplicación...',
+        desc: 'Será redirigido automáticamente en un momento.',
+        countdown: 'Redirigiendo en {n} segundo(s)...',
+        btn: 'Abrir ahora',
+        note: 'Si no es redirigido, haga clic en el botón de abajo.'
+      }
+    };
+
+    var t = i18n[lang] || i18n['en'];
+    document.getElementById('title').textContent = t.title;
+    document.getElementById('desc').textContent = t.desc;
+    document.getElementById('note').textContent = t.note;
+
+    var btn = document.getElementById('manualBtn');
+    btn.textContent = t.btn;
+    btn.href = APP_URL;
+
+    var remaining = DELAY;
+    var countdownEl = document.getElementById('countdown');
+
+    function tick() {
+      countdownEl.textContent = t.countdown.replace('{n}', remaining);
+      if (remaining <= 0) {
+        window.location.href = APP_URL;
+        // Show manual button as fallback
+        setTimeout(function() {
+          btn.style.display = 'inline-block';
+          document.getElementById('spinner').style.display = 'none';
+          countdownEl.textContent = '';
+        }, 2000);
+        return;
+      }
+      remaining--;
+      setTimeout(tick, 1000);
+    }
+
+    // Show manual button after a moment regardless
+    setTimeout(function() {
+      btn.style.display = 'inline-block';
+    }, 1500);
+
+    tick();
+  </script>
+</body>
+</html>
