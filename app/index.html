@@ -9,28 +9,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #f5f4f1;
-      color: #1a1a1a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 24px;
+      background: #f5f4f1; color: #1a1a1a;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 24px;
     }
     .card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 16px;
-      padding: 40px 36px 36px;
-      max-width: 500px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      background: #fff; border: 1px solid #e0e0e0; border-radius: 16px;
+      padding: 40px 36px 36px; max-width: 480px; width: 100%;
+      text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
     }
     .logo { width: 56px; height: 56px; margin-bottom: 18px; }
     h1 { font-size: 20px; font-weight: 800; color: #c0392b; margin-bottom: 6px; }
     .subtitle { font-size: 14px; color: #737373; line-height: 1.5; margin-bottom: 24px; }
 
+    /* ── Primary button ── */
     .btn-primary {
       display: flex; align-items: center; justify-content: center; gap: 10px;
       width: 100%; padding: 15px 24px;
@@ -40,28 +32,10 @@
       box-shadow: 0 2px 8px rgba(51,103,214,0.18);
     }
     .btn-primary:hover { background: #2a56b8; box-shadow: 0 4px 16px rgba(51,103,214,0.25); }
-    .btn-primary:disabled, .btn-primary[disabled] { opacity: 0.6; cursor: wait; }
     .btn-primary svg { flex-shrink: 0; }
 
-    /* ── Status ── */
-    .status {
-      margin-top: 16px; padding: 12px 16px;
-      border-radius: 8px; font-size: 13px; line-height: 1.5;
-      display: none;
-    }
-    .status.detecting { display: block; background: #e8f0fe; color: #1a73e8; border: 1px solid #c5d9f7; }
-    .status.success   { display: block; background: #e6f4ea; color: #137333; border: 1px solid #b7dfc3; }
-    .status.failed    { display: block; background: #fce8e6; color: #c5221f; border: 1px solid #f5c6c0; }
-    .spinner-sm {
-      display: inline-block; width: 14px; height: 14px;
-      border: 2px solid currentColor; border-top-color: transparent;
-      border-radius: 50%; animation: spin 0.7s linear infinite;
-      vertical-align: middle; margin-right: 6px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ── Trouble ── */
-    .trouble { margin-top: 24px; border-top: 1px solid #eee; padding-top: 20px; }
+    /* ── Trouble section ── */
+    .trouble { margin-top: 24px; border-top: 1px solid #eee; padding-top: 18px; }
     .trouble-toggle {
       display: inline-flex; align-items: center; gap: 6px;
       background: none; border: none; color: #3367d6;
@@ -81,7 +55,8 @@
     .account-btn {
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       padding: 14px 8px; background: #f7f8fa; border: 2px solid #e0e0e0;
-      border-radius: 10px; cursor: pointer; text-decoration: none; transition: all 0.15s; color: #1a1a1a;
+      border-radius: 10px; cursor: pointer; text-decoration: none;
+      transition: all 0.15s; color: #1a1a1a;
     }
     .account-btn:hover { border-color: #3367d6; background: #f0f4ff; box-shadow: 0 2px 8px rgba(51,103,214,0.12); }
     .account-btn .acc-icon {
@@ -93,13 +68,18 @@
     .c0{background:#4285f4} .c1{background:#ea4335} .c2{background:#fbbc05;color:#333!important}
     .c3{background:#34a853} .c4{background:#ff6d01} .c5{background:#46bdc6}
 
-    /* ── Tip & copy ── */
-    .tip-box { background:#fffde7;border:1px solid #ffe082;border-radius:8px;padding:12px 14px;margin-top:14px;text-align:left }
-    .tip-box p{font-size:12px;color:#6d5c00;line-height:1.5;margin:0} .tip-box strong{color:#e65100}
+    /* ── Tip box ── */
+    .tip-box { background:#fffde7; border:1px solid #ffe082; border-radius:8px; padding:12px 14px; margin-top:14px; text-align:left; }
+    .tip-box p { font-size:12px; color:#6d5c00; line-height:1.5; margin:0; }
+    .tip-box strong { color:#e65100; }
+
+    /* ── Copy row ── */
     .copy-row { display:flex; gap:8px; margin-top:14px; align-items:center; }
-    .copy-input { flex:1; padding:8px 12px; font-size:12px; font-family:monospace; border:1px solid #ddd; border-radius:6px; background:#f9f9f9; color:#333; overflow:hidden; text-overflow:ellipsis; }
+    .copy-input { flex:1; padding:8px 12px; font-size:11px; font-family:monospace; border:1px solid #ddd; border-radius:6px; background:#f9f9f9; color:#333; overflow:hidden; text-overflow:ellipsis; }
     .copy-btn { padding:8px 14px; font-size:12px; font-weight:600; background:#f0f0f0; border:1px solid #ddd; border-radius:6px; cursor:pointer; transition:background .15s; white-space:nowrap; }
-    .copy-btn:hover{background:#e0e0e0} .copy-btn.copied{background:#e6f4ea;border-color:#b7dfc3;color:#137333}
+    .copy-btn:hover { background:#e0e0e0; }
+    .copy-btn.copied { background:#e6f4ea; border-color:#b7dfc3; color:#137333; }
+
     .note { font-size: 11px; color: #aaa; margin-top: 16px; line-height: 1.4; }
   </style>
 </head>
@@ -107,9 +87,10 @@
   <div class="card">
     <img class="logo" src="../logo_official.svg" alt="Massive Delete Gmail">
     <h1 id="title">Open Massive Delete Gmail</h1>
-    <p class="subtitle" id="subtitle">Click below to open the app. We'll find the right account automatically.</p>
+    <p class="subtitle" id="subtitle">Click below to open the app.</p>
 
-    <button class="btn-primary" id="btnOpen" onclick="handleOpen()">
+    <!-- Primary: ?authuser=0 (pins Google to first account, prevents /u/N/ rewrite) -->
+    <a class="btn-primary" id="btnOpen" href="#">
       <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
         <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -117,23 +98,21 @@
         <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
       </svg>
       <span id="btnOpenText">Open App</span>
-    </button>
-
-    <div class="status" id="statusBox"></div>
+    </a>
 
     <!-- ── Trouble section ── -->
     <div class="trouble">
       <button class="trouble-toggle" id="troubleToggle" onclick="toggleTrouble()">
-        <span id="troubleLabel">Still not working?</span>
+        <span id="troubleLabel">Seeing a Google Drive error?</span>
         <span class="arrow">&#x25BC;</span>
       </button>
       <div class="trouble-body" id="troubleBody">
-        <p id="troubleDesc">If auto-detection doesn't work, try picking your Google account slot manually:</p>
+        <p id="troubleDesc">If you have multiple Google accounts logged in, the app may not know which one to use. Pick your account number below:</p>
         <div class="account-grid" id="accountGrid"></div>
-        <p class="hint" id="troubleHint">Try each until the app opens.</p>
+        <p class="hint" id="troubleHint">Try each one — one of them will open the app correctly.</p>
 
         <div class="tip-box">
-          <p id="tipText"><strong>Guaranteed fix:</strong> Open an <strong>incognito window</strong> (Ctrl+Shift+N) and paste the link below. Always works.</p>
+          <p id="tipText"></p>
         </div>
 
         <div class="copy-row">
@@ -148,107 +127,40 @@
 
   <script>
     /* ═══════════════════════════════════════════════════
-       CONFIG — uses the NEW deployment ID (fresh access settings)
+       CONFIG
+       ?authuser=N pins the Google account index and stops
+       Google from rewriting the path to /u/N/.
+       See: https://stackoverflow.com/a/78498122
        ═══════════════════════════════════════════════════ */
     var DEPLOY_ID = 'AKfycbyVQc93W-yMTAvOW-GhNwmMjtMuxGLW-jB4GFRlDBu3tq8GB2rqXWtCTTYhcEXatdTl8w';
-    var SCRIPT_URL = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
-    var PROBE_TIMEOUT = 4000;
+    var BASE_URL  = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
 
-    function slotUrl(n) {
-      return 'https://script.google.com/macros/u/' + n + '/s/' + DEPLOY_ID + '/exec';
-    }
+    // ?authuser=0 → first Google account (most common)
+    function authUrl(n) { return BASE_URL + '?authuser=' + n; }
 
     /* ═══════════════════════════════════════════════════
-       JSONP PROBE — detect which /u/N/ URL actually reaches
-       the Apps Script (works for users who already authorized).
-       The script's doGet() returns "callbackName()" as JS.
+       PRIMARY BUTTON — uses ?authuser=0 by default
        ═══════════════════════════════════════════════════ */
-    function probeUrl(url) {
-      return new Promise(function(resolve) {
-        var cb = '__p_' + Math.random().toString(36).slice(2);
-        var done = false;
-        var timer = setTimeout(finish.bind(null, false), PROBE_TIMEOUT);
-
-        window[cb] = function() { finish(true); };
-
-        var s = document.createElement('script');
-        s.src = url + '?ping=' + cb;
-        s.onerror = function() { finish(false); };
-        document.head.appendChild(s);
-
-        function finish(ok) {
-          if (done) return; done = true;
-          clearTimeout(timer);
-          try { delete window[cb]; } catch(e) {}
-          try { s.parentNode.removeChild(s); } catch(e) {}
-          resolve(ok ? url : null);
-        }
-      });
-    }
-
-    /* Probe ALL URLs in parallel, resolve with the first that works */
-    function probeAll() {
-      var urls = [SCRIPT_URL];
-      for (var i = 0; i < 6; i++) urls.push(slotUrl(i));
-
-      return Promise.all(urls.map(probeUrl)).then(function(results) {
-        for (var i = 0; i < results.length; i++) {
-          if (results[i]) return results[i];
-        }
-        return null;
-      });
-    }
+    document.getElementById('btnOpen').href = authUrl(0);
 
     /* ═══════════════════════════════════════════════════
-       SMART OPEN — auto-detect + fallback chain
+       ACCOUNT GRID — ?authuser=0 through ?authuser=5
        ═══════════════════════════════════════════════════ */
-    var detectedUrl = null;
-
-    function handleOpen() {
-      /* Already detected → go directly */
-      if (detectedUrl) {
-        window.location.href = detectedUrl;
-        return;
-      }
-
-      var btn = document.getElementById('btnOpen');
-      btn.disabled = true;
-      setStatus('detecting', t.detecting);
-
-      probeAll().then(function(url) {
-        btn.disabled = false;
-
-        if (url) {
-          detectedUrl = url;
-          setStatus('success', t.found);
-          setTimeout(function() { window.location.href = url; }, 500);
-        } else {
-          /* No probe worked — try AccountChooser in new tab as fallback */
-          setStatus('failed', t.notFound);
-
-          /* Auto-expand trouble section */
-          var body = document.getElementById('troubleBody');
-          if (!body.classList.contains('open')) toggleTrouble();
-
-          /* Open AccountChooser in a new tab */
-          setTimeout(function() {
-            window.open(
-              'https://accounts.google.com/AccountChooser?continue=' + encodeURIComponent(SCRIPT_URL),
-              '_blank'
-            );
-          }, 1500);
-        }
-      });
+    var grid = document.getElementById('accountGrid');
+    for (var i = 0; i < 6; i++) {
+      var a = document.createElement('a');
+      a.className = 'account-btn';
+      a.href = authUrl(i);
+      a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span>'
+                   + '<span class="acc-label lbl-' + i + '"></span>';
+      grid.appendChild(a);
     }
 
-    function setStatus(cls, msg) {
-      var el = document.getElementById('statusBox');
-      el.className = 'status ' + cls;
-      el.innerHTML = (cls === 'detecting' ? '<span class="spinner-sm"></span> ' : '') + msg;
-    }
+    /* Copy field — direct URL (for incognito) */
+    document.getElementById('copyInput').value = BASE_URL;
 
     /* ═══════════════════════════════════════════════════
-       UI helpers
+       HELPERS
        ═══════════════════════════════════════════════════ */
     function toggleTrouble() {
       document.getElementById('troubleToggle').classList.toggle('open');
@@ -270,72 +182,45 @@
     }
 
     /* ═══════════════════════════════════════════════════
-       BUILD ACCOUNT GRID
-       ═══════════════════════════════════════════════════ */
-    (function() {
-      var grid = document.getElementById('accountGrid');
-      for (var i = 0; i < 6; i++) {
-        var a = document.createElement('a');
-        a.className = 'account-btn';
-        a.href = slotUrl(i);
-        a.target = '_blank';
-        a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span>'
-                     + '<span class="acc-label lbl-' + i + '"></span>';
-        grid.appendChild(a);
-      }
-    })();
-
-    document.getElementById('copyInput').value = SCRIPT_URL;
-
-    /* ═══════════════════════════════════════════════════
        i18n
        ═══════════════════════════════════════════════════ */
     var lang = (navigator.language || '').slice(0, 2);
     var i18n = {
       pt: {
         title: 'Abrir Massive Delete Gmail',
-        subtitle: 'Clique abaixo para abrir o app. Vamos encontrar a conta certa automaticamente.',
+        subtitle: 'Clique abaixo para abrir o app.',
         btnOpen: 'Abrir App',
-        troubleLabel: 'Ainda n\u00e3o funcionou?',
-        troubleDesc: 'Se a detec\u00e7\u00e3o autom\u00e1tica n\u00e3o funcionar, tente escolher o slot da sua conta manualmente:',
-        troubleHint: 'Tente cada uma at\u00e9 o app abrir.',
+        troubleLabel: 'Apareceu um erro do Google Drive?',
+        troubleDesc: 'Se voc\u00ea tem v\u00e1rias contas Google logadas, o app pode n\u00e3o saber qual usar. Escolha o n\u00famero da sua conta:',
+        troubleHint: 'Tente cada uma \u2014 uma delas vai abrir o app.',
         accWord: 'Conta',
         note: 'Powered by Google Apps Script. Nunca vemos sua senha.',
-        detecting: 'Detectando a conta correta\u2026',
-        found: '\u2713 Conta encontrada! Redirecionando\u2026',
-        notFound: 'Detec\u00e7\u00e3o n\u00e3o encontrou sess\u00e3o ativa. Abrindo seletor de contas\u2026',
-        copy: 'Copiar', copied: 'Copiado',
-        tip: '<strong>Solu\u00e7\u00e3o garantida:</strong> Abra uma <strong>janela an\u00f4nima</strong> (Ctrl+Shift+N) e cole o link abaixo. Funciona sempre.',
+        tip: '<strong>Dica:</strong> Se nenhum bot\u00e3o funcionar, abra uma <strong>janela an\u00f4nima</strong> (Ctrl+Shift+N) e cole o link abaixo. Funciona sempre.',
+        copy: 'Copiar', copied: 'Copiado'
       },
       en: {
         title: 'Open Massive Delete Gmail',
-        subtitle: 'Click below to open the app. We\'ll find the right account automatically.',
+        subtitle: 'Click below to open the app.',
         btnOpen: 'Open App',
-        troubleLabel: 'Still not working?',
-        troubleDesc: 'If auto-detection doesn\'t work, try picking your Google account slot manually:',
-        troubleHint: 'Try each until the app opens.',
+        troubleLabel: 'Seeing a Google Drive error?',
+        troubleDesc: 'If you have multiple Google accounts logged in, the app may not know which one to use. Pick your account number:',
+        troubleHint: 'Try each one \u2014 one of them will open the app.',
         accWord: 'Account',
         note: 'Powered by Google Apps Script. We never see your password.',
-        detecting: 'Detecting the right account\u2026',
-        found: '\u2713 Account found! Redirecting\u2026',
-        notFound: 'Auto-detection found no active session. Opening account chooser\u2026',
-        copy: 'Copy', copied: 'Copied',
-        tip: '<strong>Guaranteed fix:</strong> Open an <strong>incognito window</strong> (Ctrl+Shift+N) and paste the link below. Always works.',
+        tip: '<strong>Tip:</strong> If none work, open an <strong>incognito window</strong> (Ctrl+Shift+N) and paste the link below. Always works.',
+        copy: 'Copy', copied: 'Copied'
       },
       es: {
         title: 'Abrir Massive Delete Gmail',
-        subtitle: 'Haga clic para abrir. Detectaremos la cuenta correcta.',
+        subtitle: 'Haga clic abajo para abrir la app.',
         btnOpen: 'Abrir App',
-        troubleLabel: '\u00bfA\u00fan no funciona?',
-        troubleDesc: 'Si la detecci\u00f3n no funciona, elija su cuenta manualmente:',
-        troubleHint: 'Pruebe cada una hasta que abra.',
+        troubleLabel: '\u00bfAparece un error de Google Drive?',
+        troubleDesc: 'Si tiene varias cuentas de Google, la app puede no saber cu\u00e1l usar. Elija el n\u00famero de su cuenta:',
+        troubleHint: 'Pruebe cada una \u2014 una abrir\u00e1 la app.',
         accWord: 'Cuenta',
         note: 'Powered by Google Apps Script. Nunca vemos tu contrase\u00f1a.',
-        detecting: 'Detectando la cuenta correcta\u2026',
-        found: '\u2713 \u00a1Cuenta encontrada! Redirigiendo\u2026',
-        notFound: 'No se encontr\u00f3 sesi\u00f3n activa. Abriendo selector de cuentas\u2026',
-        copy: 'Copiar', copied: 'Copiado',
-        tip: '<strong>Soluci\u00f3n garantizada:</strong> Abra una <strong>ventana de inc\u00f3gnito</strong> (Ctrl+Shift+N) y pegue el enlace. Siempre funciona.',
+        tip: '<strong>Consejo:</strong> Si ninguno funciona, abra una <strong>ventana de inc\u00f3gnito</strong> (Ctrl+Shift+N) y pegue el enlace de abajo. Siempre funciona.',
+        copy: 'Copiar', copied: 'Copiado'
       }
     };
 
@@ -351,20 +236,12 @@
     document.getElementById('copyBtnText').textContent = t.copy;
 
     /* Account labels */
-    var ordinals = { en:['1st','2nd','3rd','4th','5th','6th'], pt:['1\u00aa','2\u00aa','3\u00aa','4\u00aa','5\u00aa','6\u00aa'], es:['1\u00aa','2\u00aa','3\u00aa','4\u00aa','5\u00aa','6\u00aa'] };
-    var ol = ordinals[lang] || ordinals['en'];
+    var ords = { en:['1st','2nd','3rd','4th','5th','6th'], pt:['1\u00aa','2\u00aa','3\u00aa','4\u00aa','5\u00aa','6\u00aa'], es:['1\u00aa','2\u00aa','3\u00aa','4\u00aa','5\u00aa','6\u00aa'] };
+    var ol = ords[lang] || ords['en'];
     for (var k = 0; k < 6; k++) {
       var el = document.querySelector('.lbl-' + k);
       if (el) el.textContent = ol[k] + ' ' + t.accWord;
     }
-
-    /* ═══════════════════════════════════════════════════
-       AUTO-PROBE on page load (background)
-       Pre-detects so button click is instant for returning users.
-       ═══════════════════════════════════════════════════ */
-    probeAll().then(function(url) {
-      if (url) detectedUrl = url;
-    });
   </script>
 </body>
 </html>

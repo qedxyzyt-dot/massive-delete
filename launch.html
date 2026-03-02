@@ -88,7 +88,8 @@
 
   <script>
     var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVQc93W-yMTAvOW-GhNwmMjtMuxGLW-jB4GFRlDBu3tq8GB2rqXWtCTTYhcEXatdTl8w/exec';
-    var APP_URL = 'https://accounts.google.com/AccountChooser?continue=' + encodeURIComponent(SCRIPT_URL);
+    // ?authuser=0 pins Google to the first account and prevents /u/N/ rewrite
+    var APP_URL = SCRIPT_URL + '?authuser=0';
     var DELAY = 3; // seconds
 
     // i18n
