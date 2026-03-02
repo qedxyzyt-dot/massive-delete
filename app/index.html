@@ -110,6 +110,13 @@
       <span id="btnOpenText">Open App</span>
     </a>
 
+    <!-- ── Direct link (single account users) ── -->
+    <div style="margin-top:16px;">
+      <a id="directLink" href="#" style="font-size:13px; color:#3367d6; text-decoration:none; font-weight:600;">
+        <span id="directLinkText">Single account? Open directly</span> &rarr;
+      </a>
+    </div>
+
     <!-- ── Trouble? ── -->
     <div class="trouble">
       <button class="trouble-toggle" id="troubleToggle" onclick="toggleTrouble()">
@@ -134,17 +141,19 @@
     // The deploy ID
     var DEPLOY_ID = 'AKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg';
 
-    // Direct URL (no account hint — works if only 1 account or Google picks correctly)
-    var DIRECT_URL = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
+    // Direct script URL
+    var SCRIPT_URL = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
 
-    // Account-specific URL using /u/N/ path (Google's internal multi-account routing)
-    // This does NOT cause redirect loops like ?authuser=N does
+    // AccountChooser URL — forces user to pick an account first, avoids /u/N/ routing bug
+    var CHOOSER_URL = 'https://accounts.google.com/AccountChooser?continue=' + encodeURIComponent(SCRIPT_URL);
+
+    // Account-specific URL using /u/N/ path (fallback for troubleshooting)
     function accountUrl(n) {
       return 'https://script.google.com/macros/u/' + n + '/s/' + DEPLOY_ID + '/exec';
     }
 
-    // Primary button: direct URL
-    document.getElementById('btnOpen').href = DIRECT_URL;
+    // Primary button: AccountChooser (most reliable for multi-account users)
+    document.getElementById('btnOpen').href = CHOOSER_URL;
 
     // Build account grid (0-5)
     var grid = document.getElementById('accountGrid');
@@ -175,6 +184,7 @@
         title: 'Abrir Massive Delete Gmail',
         subtitle: 'Clique abaixo para abrir o app.',
         btnOpen: 'Abrir App',
+        directLink: 'Conta única? Abrir direto',
         troubleLabel: 'Apareceu um erro do Google Drive?',
         troubleDesc: 'Se você tem várias contas Google logadas, o Google pode não saber qual usar. Escolha o número da sua conta abaixo:',
         troubleHint: 'Tente cada uma até o app abrir corretamente.',
@@ -186,6 +196,7 @@
         title: 'Open Massive Delete Gmail',
         subtitle: 'Click below to open the app.',
         btnOpen: 'Open App',
+        directLink: 'Single account? Open directly',
         troubleLabel: 'Seeing a Google Drive error?',
         troubleDesc: 'If you have multiple Google accounts logged in, Google may not know which one to use. Pick your account slot below:',
         troubleHint: 'Try each one until the app opens correctly.',
@@ -197,6 +208,7 @@
         title: 'Abrir Massive Delete Gmail',
         subtitle: 'Haga clic abajo para abrir la app.',
         btnOpen: 'Abrir App',
+        directLink: '¿Cuenta única? Abrir directo',
         troubleLabel: '¿Aparece un error de Google Drive?',
         troubleDesc: 'Si tiene varias cuentas de Google, es posible que Google no sepa cuál usar. Elija su cuenta abajo:',
         troubleHint: 'Pruebe cada una hasta que la app se abra correctamente.',
@@ -210,6 +222,8 @@
     document.getElementById('title').textContent = t.title;
     document.getElementById('subtitle').textContent = t.subtitle;
     document.getElementById('btnOpenText').textContent = t.btnOpen;
+    document.getElementById('directLink').href = SCRIPT_URL;
+    document.getElementById('directLinkText').textContent = t.directLink;
     document.getElementById('troubleLabel').textContent = t.troubleLabel;
     document.getElementById('troubleDesc').textContent = t.troubleDesc;
     document.getElementById('troubleHint').textContent = t.troubleHint;

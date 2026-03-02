@@ -88,7 +88,8 @@
 
   <script>
     var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg/exec';
-    var APP_URL = 'https://accounts.google.com/AddSession?continue=' + encodeURIComponent(SCRIPT_URL);
+    // AccountChooser — lets user pick the correct account, avoids /u/N/ routing bug
+    var APP_URL = 'https://accounts.google.com/AccountChooser?continue=' + encodeURIComponent(SCRIPT_URL);
     var DELAY = 3; // seconds
 
     // i18n
