@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Massive Delete Gmail — Abrindo...</title>
+  <title>Massive Delete Gmail — Opening...</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,11 +79,11 @@
 <body>
   <div class="card">
     <div class="spinner" id="spinner"></div>
-    <h1 id="title">Abrindo o aplicativo...</h1>
-    <p id="desc">Você será redirecionado automaticamente em instantes.</p>
+    <h1 id="title">Opening the app...</h1>
+    <p id="desc">You will be redirected automatically in a moment.</p>
     <p class="countdown" id="countdown"></p>
-    <a class="btn" id="manualBtn" style="display:none;" href="#">Abrir agora</a>
-    <p class="note" id="note">Se não for redirecionado, clique no botão abaixo.</p>
+    <a class="btn" id="manualBtn" style="display:none;" href="#">Open now</a>
+    <p class="note" id="note">If not redirected, click the button below.</p>
   </div>
 
   <script>
@@ -121,6 +121,15 @@
     document.getElementById('title').textContent = t.title;
     document.getElementById('desc').textContent = t.desc;
     document.getElementById('note').textContent = t.note;
+
+    // Update html lang and page title
+    if (lang === 'pt') {
+      document.documentElement.lang = 'pt-BR';
+      document.title = 'Massive Delete Gmail — Abrindo...';
+    } else if (lang === 'es') {
+      document.documentElement.lang = 'es';
+      document.title = 'Massive Delete Gmail — Abriendo...';
+    }
 
     var btn = document.getElementById('manualBtn');
     btn.textContent = t.btn;
