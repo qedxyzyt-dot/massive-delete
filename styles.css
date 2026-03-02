@@ -64,7 +64,9 @@ img, svg { display: block; max-width: 100%; }
 .nav__links a:hover { color: var(--ink); text-decoration: none; }
 
 .nav__toggle {
-  display: none; background: none; border: none; cursor: pointer; padding: 6px;
+  display: none; background: none; border: none; cursor: pointer; padding: 10px;
+  min-width: 44px; min-height: 44px;
+  display: none; align-items: center; justify-content: center;
 }
 .nav__toggle span {
   display: block; width: 20px; height: 2px;
@@ -142,10 +144,14 @@ img, svg { display: block; max-width: 100%; }
 .hero__visual img { width: 100%; height: 100%; object-fit: contain; }
 
 @media (max-width: 700px) {
-  .hero { flex-direction: column-reverse; text-align: center; padding: 48px 20px 36px; gap: 28px; }
-  .hero__title { font-size: 30px; }
-  .hero__desc { margin: 16px auto 24px; }
-  .hero__visual { width: 140px; height: 140px; }
+  .hero { flex-direction: column-reverse; text-align: center; padding: 40px 16px 28px; gap: 24px; }
+  .hero__title { font-size: 28px; letter-spacing: -0.5px; }
+  .hero__desc { margin: 14px auto 22px; font-size: 15px; max-width: 100%; }
+  .hero__visual { width: 120px; height: 120px; }
+  .hero__cta { width: 100%; text-align: center; padding: 15px 24px; font-size: 15px; min-height: 48px; display: flex; align-items: center; justify-content: center; }
+  .hero__cta--alt { margin-left: 0; margin-top: 10px; }
+  .hero__note { font-size: 13px; margin-top: 14px; }
+  .hero__badge { font-size: 11px; margin-bottom: 16px; }
 }
 
 /* ── Divider ── */
@@ -236,7 +242,15 @@ img, svg { display: block; max-width: 100%; }
   font-weight: 700;
   flex-shrink: 0;
 }
-.plan--accent .plan__list li::before { content: '✓'; color: var(--accent); }
+.plan--accent .plan__list li::before {
+  content: '';
+  display: inline-block;
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+  background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
 .plan__btn {
   display: block; text-align: center; width: 100%;
   padding: 11px; border-radius: 6px;
@@ -312,9 +326,66 @@ img, svg { display: block; max-width: 100%; }
 .e404__link:hover { background: var(--accent); text-decoration: none; }
 
 @media (max-width: 600px) {
-  .sect { padding: 40px 20px; }
-  .hero__title { font-size: 28px; }
+  .sect { padding: 40px 16px; }
+  .hero__title { font-size: 26px; }
   .sect__heading { font-size: 22px; }
-  .legal { padding: 32px 16px 48px; }
+  .sect__sub { font-size: 14px; margin-bottom: 28px; }
+  .legal { padding: 28px 14px 40px; }
   .legal h1 { font-size: 22px; }
+  .legal h2 { font-size: 15px; }
+  .legal p, .legal li { font-size: 14px; }
+
+  /* Nav — touch-friendly links */
+  .nav__links a { font-size: 15px; padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
+
+  /* Steps */
+  .step { padding: 24px 18px; }
+  .step__title { font-size: 15px; }
+  .step__text { font-size: 14px; }
+
+  /* Trust */
+  .trust__item { padding: 18px 16px; }
+  .trust__title { font-size: 14px; }
+  .trust__text { font-size: 13px; }
+
+  /* Pricing */
+  .plan { padding: 24px 18px; }
+  .plan__price { font-size: 32px; }
+  .plan__desc { font-size: 14px; }
+  .plan__list li { font-size: 14px; }
+  .plan__btn { padding: 14px; font-size: 15px; min-height: 48px; display: flex; align-items: center; justify-content: center; }
+  .plan__note { font-size: 12px; }
+
+  /* CTA band */
+  .cta-band { padding: 36px 16px; }
+  .cta-band__text { font-size: 17px; }
+  .cta-band__sub { font-size: 13px; }
+  .cta-band__btn { padding: 14px 28px; font-size: 14px; min-height: 48px; display: inline-flex; align-items: center; }
+
+  /* Footer */
+  .footer { padding: 24px 16px; }
+  .footer__row { gap: 14px; }
+  .footer a { font-size: 13px; padding: 4px 0; }
+
+  /* 404 */
+  .e404 { padding: 60px 16px; }
+  .e404__num { font-size: 60px; }
+  .e404__link { min-height: 48px; display: inline-flex; align-items: center; }
+}
+
+/* Very small screens (320px-375px) */
+@media (max-width: 380px) {
+  .hero { padding: 32px 12px 24px; }
+  .hero__title { font-size: 24px; }
+  .hero__desc { font-size: 14px; }
+  .sect { padding: 32px 12px; }
+  .sect__heading { font-size: 20px; }
+  .plan__price { font-size: 28px; }
+  .nav__inner { padding: 0 14px; }
+  .nav__brand { font-size: 14px; gap: 8px; }
+}
+
+/* Prevent iOS zoom on input focus */
+@media (max-width: 768px) {
+  input, textarea, select, button { font-size: 16px; }
 }

@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover">
   <title>Massive Delete Gmail — Bulk Email Cleanup Tool</title>
   <meta name="description" content="Delete thousands of unwanted Gmail emails in seconds. Free, open tool powered by Google Apps Script. No passwords stored.">
   <meta name="robots" content="index, follow">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Mobile fixes for inline components */
+    stripe-buy-button { display: block; width: 100%; max-width: 100%; overflow: hidden; }
+    @media (max-width: 600px) {
+      .plan--accent stripe-buy-button { margin-top: 4px; }
+    }
+  </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3567117914117424"
      crossorigin="anonymous"></script>
   <script async src="https://js.stripe.com/v3/buy-button.js"></script>
@@ -149,7 +156,7 @@
         buy-button-id="buy_btn_1T6GWX2LwvqbmS6eyK4rBzUN"
         publishable-key="pk_live_51Ssv5o2LwvqbmS6e3dOTaiLQ5FJvyRxrVPk2h6oLV9kLl58ZvE0VUT9vdXPkfliX2MygSQkF95ylsnbbOpkUHYNH001HE6k2gi"
       ></stripe-buy-button>
-      <p class="plan__note" data-i18n="proEmailNote">⚠️ Covers up to 5 Gmail accounts. The email used at checkout becomes the owner and can add 4 more @gmail.com accounts in the app. Works exclusively with Gmail.</p>
+      <p class="plan__note" data-i18n="proEmailNote">Covers up to 5 Gmail accounts. The email used at checkout becomes the owner and can add 4 more @gmail.com accounts in the app. Works exclusively with Gmail.</p>
     </div>
   </div>
 </section>
@@ -224,7 +231,7 @@
       proFeat4: 'Até 5 contas Gmail',
       proFeat5: 'Suporte prioritário por e-mail',
       proBtn: 'Assinar Pro',
-      proEmailNote: '⚠️ Cobre até 5 contas Gmail. O e-mail usado na compra será o titular e poderá adicionar mais 4 contas @gmail.com no app. Funciona exclusivamente com Gmail.',
+      proEmailNote: 'Cobre até 5 contas Gmail. O e-mail usado na compra será o titular e poderá adicionar mais 4 contas @gmail.com no app. Funciona exclusivamente com Gmail.',
       ctaText: 'Dúvidas? Feedback? Basta responder este e-mail.',
       ctaSub: 'Lemos tudo. Sem sistema de tickets, sem robôs.',
     },
@@ -274,7 +281,7 @@
       proFeat4: 'Hasta 5 cuentas Gmail',
       proFeat5: 'Soporte prioritario por correo',
       proBtn: 'Suscribirse a Pro',
-      proEmailNote: '⚠️ Cubre hasta 5 cuentas Gmail. El correo usado en la compra será el titular y podrá agregar hasta 4 cuentas @gmail.com más en la app. Funciona exclusivamente con Gmail.',
+      proEmailNote: 'Cubre hasta 5 cuentas Gmail. El correo usado en la compra será el titular y podrá agregar hasta 4 cuentas @gmail.com más en la app. Funciona exclusivamente con Gmail.',
       ctaText: '¿Preguntas? ¿Comentarios? Solo responde a este correo.',
       ctaSub: 'Leemos todo. Sin sistema de tickets, sin bots.',
     }
