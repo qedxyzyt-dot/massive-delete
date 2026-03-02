@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Massive Delete Gmail — Choose Account</title>
+  <title>Massive Delete Gmail — Open App</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,7 +22,7 @@
       border: 1px solid #e0e0e0;
       border-radius: 16px;
       padding: 40px 36px 36px;
-      max-width: 440px;
+      max-width: 460px;
       width: 100%;
       text-align: center;
       box-shadow: 0 4px 24px rgba(0,0,0,0.07);
@@ -38,9 +38,11 @@
       font-size: 14px;
       color: #737373;
       line-height: 1.5;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
-    .btn-choose {
+
+    /* ── Primary CTA ── */
+    .btn-primary {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,118 +60,221 @@
       transition: background 0.15s, box-shadow 0.15s;
       box-shadow: 0 2px 8px rgba(51,103,214,0.18);
     }
-    .btn-choose:hover { background: #2a56b8; box-shadow: 0 4px 16px rgba(51,103,214,0.25); }
-    .btn-choose svg { flex-shrink: 0; }
-    .divider {
-      display: flex;
+    .btn-primary:hover { background: #2a56b8; box-shadow: 0 4px 16px rgba(51,103,214,0.25); }
+    .btn-primary svg { flex-shrink: 0; }
+
+    /* ── Trouble section ── */
+    .trouble {
+      margin-top: 28px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+    .trouble-toggle {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      margin: 20px 0;
-      color: #bbb;
-      font-size: 12px;
-    }
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #e0e0e0;
-    }
-    .btn-direct {
-      display: block;
-      width: 100%;
-      padding: 13px 24px;
-      background: transparent;
+      gap: 6px;
+      background: none;
+      border: none;
       color: #3367d6;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      border: 2px solid #dde3ed;
-      border-radius: 8px;
       cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s, border-color 0.15s;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .trouble-toggle:hover { background: #f0f4ff; }
+    .trouble-toggle .arrow { transition: transform 0.2s; font-size: 10px; }
+    .trouble-toggle.open .arrow { transform: rotate(180deg); }
+
+    .trouble-body {
+      display: none;
+      margin-top: 16px;
+      text-align: left;
+    }
+    .trouble-body.open { display: block; }
+    .trouble-body p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .trouble-body .hint {
+      font-size: 12px;
+      color: #999;
+      line-height: 1.4;
+      margin-bottom: 12px;
       text-align: center;
     }
-    .btn-direct:hover { background: #f0f4ff; border-color: #3367d6; }
+
+    /* ── Account grid ── */
+    .account-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .account-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 8px;
+      background: #f7f8fa;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+      color: #1a1a1a;
+    }
+    .account-btn:hover {
+      border-color: #3367d6;
+      background: #f0f4ff;
+      box-shadow: 0 2px 8px rgba(51,103,214,0.12);
+    }
+    .account-btn .acc-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .account-btn .acc-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+    }
+
     .note {
       font-size: 11px;
       color: #aaa;
-      margin-top: 20px;
+      margin-top: 16px;
       line-height: 1.4;
     }
-    .note a { color: #999; }
+
+    /* Colors for account buttons */
+    .c0 { background: #4285f4; }
+    .c1 { background: #ea4335; }
+    .c2 { background: #fbbc05; color: #333 !important; }
+    .c3 { background: #34a853; }
+    .c4 { background: #ff6d01; }
+    .c5 { background: #46bdc6; }
   </style>
 </head>
 <body>
   <div class="card">
     <img class="logo" src="../logo_official.svg" alt="Massive Delete Gmail">
-    <h1 id="title">Choose your Google account</h1>
-    <p class="subtitle" id="subtitle">Select which Google account you'd like to use with Massive Delete Gmail.</p>
+    <h1 id="title">Open Massive Delete Gmail</h1>
+    <p class="subtitle" id="subtitle">Click below to open the app. If you have only one Google account, it will open directly.</p>
 
-    <a class="btn-choose" id="btnChoose" href="#">
-      <!-- Google icon -->
+    <a class="btn-primary" id="btnOpen" href="#">
       <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
         <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
         <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
         <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
       </svg>
-      <span id="btnChooseText">Choose account</span>
+      <span id="btnOpenText">Open App</span>
     </a>
 
-    <div class="divider"><span id="orText">or</span></div>
+    <!-- ── Trouble? ── -->
+    <div class="trouble">
+      <button class="trouble-toggle" id="troubleToggle" onclick="toggleTrouble()">
+        <span id="troubleLabel">Seeing a Google Drive error?</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="trouble-body" id="troubleBody">
+        <p id="troubleDesc">If you have multiple Google accounts logged in, Google may not know which one to use. Pick the account slot that matches the Google account you want:</p>
+        <div class="account-grid" id="accountGrid"></div>
+        <p class="hint" id="troubleHint">Try each one until the app opens. Usually it's Account 1 or 2.</p>
+      </div>
+    </div>
 
-    <a class="btn-direct" id="btnDirect" href="#">
-      <span id="btnDirectText">Open directly (single account)</span>
-    </a>
-
-    <p class="note" id="note">
-      <span id="noteText">If you only have one Google account logged in, use "Open directly". If you have multiple accounts, use "Choose account" to avoid errors.</span>
-    </p>
+    <p class="note" id="noteText">Powered by Google Apps Script. We never see your password.</p>
   </div>
 
   <script>
     var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg/exec';
-    var CHOOSER_URL = 'https://accounts.google.com/AddSession?continue=' + encodeURIComponent(SCRIPT_URL);
 
-    document.getElementById('btnChoose').href = CHOOSER_URL;
-    document.getElementById('btnDirect').href = SCRIPT_URL;
+    // Primary button: try authuser=0 (first account)
+    document.getElementById('btnOpen').href = SCRIPT_URL + '?authuser=0';
 
-    // i18n
-    var lang = (navigator.language || '').slice(0,2);
+    // Build account grid (0-5)
+    var grid = document.getElementById('accountGrid');
+    var labels = ['1ª', '2ª', '3ª', '4ª', '5ª', '6ª'];
+    for (var i = 0; i < 6; i++) {
+      var a = document.createElement('a');
+      a.className = 'account-btn';
+      a.href = SCRIPT_URL + '?authuser=' + i;
+      a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span><span class="acc-label">' + labels[i] + ' <span id="accWord' + i + '">Account</span></span>';
+      grid.appendChild(a);
+    }
+
+    function toggleTrouble() {
+      var btn = document.getElementById('troubleToggle');
+      var body = document.getElementById('troubleBody');
+      btn.classList.toggle('open');
+      body.classList.toggle('open');
+    }
+
+    // ── i18n ──
+    var lang = (navigator.language || '').slice(0, 2);
     var i18n = {
       pt: {
-        title: 'Escolha sua conta Google',
-        subtitle: 'Selecione qual conta Google deseja usar com o Massive Delete Gmail.',
-        btnChoose: 'Escolher conta',
-        or: 'ou',
-        btnDirect: 'Abrir direto (conta única)',
-        note: 'Se você só tem uma conta Google logada, use "Abrir direto". Se tem várias contas, use "Escolher conta" para evitar erros.'
+        title: 'Abrir Massive Delete Gmail',
+        subtitle: 'Clique abaixo para abrir o app. Se você tem apenas uma conta Google, ele abrirá diretamente.',
+        btnOpen: 'Abrir App',
+        troubleLabel: 'Apareceu um erro do Google Drive?',
+        troubleDesc: 'Se você tem várias contas Google logadas, o Google pode não saber qual usar. Escolha o slot da conta que deseja:',
+        troubleHint: 'Tente cada uma até o app abrir. Geralmente é a Conta 1 ou 2.',
+        accWord: 'Conta',
+        note: 'Powered by Google Apps Script. Nunca vemos sua senha.'
       },
       en: {
-        title: 'Choose your Google account',
-        subtitle: 'Select which Google account you\'d like to use with Massive Delete Gmail.',
-        btnChoose: 'Choose account',
-        or: 'or',
-        btnDirect: 'Open directly (single account)',
-        note: 'If you only have one Google account logged in, use "Open directly". If you have multiple accounts, use "Choose account" to avoid errors.'
+        title: 'Open Massive Delete Gmail',
+        subtitle: 'Click below to open the app. If you have only one Google account, it will open directly.',
+        btnOpen: 'Open App',
+        troubleLabel: 'Seeing a Google Drive error?',
+        troubleDesc: 'If you have multiple Google accounts logged in, Google may not know which one to use. Pick the account slot that matches the Google account you want:',
+        troubleHint: 'Try each one until the app opens. Usually it\'s Account 1 or 2.',
+        accWord: 'Account',
+        note: 'Powered by Google Apps Script. We never see your password.'
       },
       es: {
-        title: 'Elige tu cuenta de Google',
-        subtitle: 'Selecciona qué cuenta de Google deseas usar con Massive Delete Gmail.',
-        btnChoose: 'Elegir cuenta',
-        or: 'o',
-        btnDirect: 'Abrir directo (cuenta única)',
-        note: 'Si solo tienes una cuenta de Google, usa "Abrir directo". Si tienes varias cuentas, usa "Elegir cuenta" para evitar errores.'
+        title: 'Abrir Massive Delete Gmail',
+        subtitle: 'Haga clic abajo para abrir la app. Si solo tiene una cuenta de Google, se abrirá directamente.',
+        btnOpen: 'Abrir App',
+        troubleLabel: '¿Aparece un error de Google Drive?',
+        troubleDesc: 'Si tiene varias cuentas de Google, es posible que Google no sepa cuál usar. Elija la cuenta que desea:',
+        troubleHint: 'Pruebe cada una hasta que la app se abra. Normalmente es la Cuenta 1 o 2.',
+        accWord: 'Cuenta',
+        note: 'Powered by Google Apps Script. Nunca vemos tu contraseña.'
       }
     };
 
     var t = i18n[lang] || i18n['en'];
     document.getElementById('title').textContent = t.title;
     document.getElementById('subtitle').textContent = t.subtitle;
-    document.getElementById('btnChooseText').textContent = t.btnChoose;
-    document.getElementById('orText').textContent = t.or;
-    document.getElementById('btnDirectText').textContent = t.btnDirect;
+    document.getElementById('btnOpenText').textContent = t.btnOpen;
+    document.getElementById('troubleLabel').textContent = t.troubleLabel;
+    document.getElementById('troubleDesc').textContent = t.troubleDesc;
+    document.getElementById('troubleHint').textContent = t.troubleHint;
     document.getElementById('noteText').textContent = t.note;
+    for (var j = 0; j < 6; j++) {
+      var el = document.getElementById('accWord' + j);
+      if (el) el.textContent = t.accWord;
+    }
+
+    // If URL has ?error or ?retry, auto-open trouble section
+    if (location.search.indexOf('error') !== -1 || location.search.indexOf('retry') !== -1) {
+      toggleTrouble();
+    }
   </script>
 </body>
 </html>
