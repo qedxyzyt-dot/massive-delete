@@ -28,35 +28,14 @@
       box-shadow: 0 4px 24px rgba(0,0,0,0.07);
     }
     .logo { width: 56px; height: 56px; margin-bottom: 18px; }
-    h1 {
-      font-size: 20px;
-      font-weight: 800;
-      color: #c0392b;
-      margin-bottom: 6px;
-    }
-    .subtitle {
-      font-size: 14px;
-      color: #737373;
-      line-height: 1.5;
-      margin-bottom: 24px;
-    }
+    h1 { font-size: 20px; font-weight: 800; color: #c0392b; margin-bottom: 6px; }
+    .subtitle { font-size: 14px; color: #737373; line-height: 1.5; margin-bottom: 24px; }
 
-    /* ── Primary CTA ── */
     .btn-primary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 15px 24px;
-      background: #3367d6;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 15px 24px;
+      background: #3367d6; color: #fff; font-size: 15px; font-weight: 700;
+      border: none; border-radius: 8px; cursor: pointer; text-decoration: none;
       transition: background 0.15s, box-shadow 0.15s;
       box-shadow: 0 2px 8px rgba(51,103,214,0.18);
     }
@@ -64,114 +43,62 @@
     .btn-primary svg { flex-shrink: 0; }
 
     /* ── Trouble section ── */
-    .trouble {
-      margin-top: 28px;
-      border-top: 1px solid #eee;
-      padding-top: 20px;
-    }
+    .trouble { margin-top: 28px; border-top: 1px solid #eee; padding-top: 20px; }
     .trouble-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: none;
-      border: none;
-      color: #3367d6;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      padding: 6px 12px;
-      border-radius: 6px;
-      transition: background 0.15s;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: none; border: none; color: #3367d6;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      padding: 6px 12px; border-radius: 6px; transition: background 0.15s;
     }
     .trouble-toggle:hover { background: #f0f4ff; }
     .trouble-toggle .arrow { transition: transform 0.2s; font-size: 10px; }
     .trouble-toggle.open .arrow { transform: rotate(180deg); }
 
-    .trouble-body {
-      display: none;
-      margin-top: 16px;
-      text-align: left;
-    }
+    .trouble-body { display: none; margin-top: 16px; text-align: left; }
     .trouble-body.open { display: block; }
-    .trouble-body p {
-      font-size: 13px;
-      color: #555;
-      line-height: 1.5;
-      margin-bottom: 14px;
-    }
-    .trouble-body .hint {
-      font-size: 12px;
-      color: #999;
-      line-height: 1.4;
-      margin-bottom: 12px;
-      text-align: center;
-    }
+    .trouble-body p { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 14px; }
+    .trouble-body .hint { font-size: 12px; color: #999; line-height: 1.4; margin-bottom: 12px; text-align: center; }
 
     /* ── Account grid ── */
-    .account-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
+    .account-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
     .account-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 8px;
-      background: #f7f8fa;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.15s;
-      color: #1a1a1a;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 14px 8px; background: #f7f8fa; border: 2px solid #e0e0e0;
+      border-radius: 10px; cursor: pointer; text-decoration: none;
+      transition: all 0.15s; color: #1a1a1a;
     }
-    .account-btn:hover {
-      border-color: #3367d6;
-      background: #f0f4ff;
-      box-shadow: 0 2px 8px rgba(51,103,214,0.12);
-    }
+    .account-btn:hover { border-color: #3367d6; background: #f0f4ff; box-shadow: 0 2px 8px rgba(51,103,214,0.12); }
     .account-btn .acc-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 6px;
     }
-    .account-btn .acc-label {
-      font-size: 12px;
-      font-weight: 600;
-      color: #555;
-    }
+    .account-btn .acc-label { font-size: 12px; font-weight: 600; color: #555; }
 
-    .note {
-      font-size: 11px;
-      color: #aaa;
-      margin-top: 16px;
-      line-height: 1.4;
-    }
+    .note { font-size: 11px; color: #aaa; margin-top: 16px; line-height: 1.4; }
 
-    /* Colors for account buttons */
-    .c0 { background: #4285f4; }
-    .c1 { background: #ea4335; }
-    .c2 { background: #fbbc05; color: #333 !important; }
-    .c3 { background: #34a853; }
-    .c4 { background: #ff6d01; }
-    .c5 { background: #46bdc6; }
+    .c0 { background: #4285f4; } .c1 { background: #ea4335; }
+    .c2 { background: #fbbc05; color: #333 !important; } .c3 { background: #34a853; }
+    .c4 { background: #ff6d01; } .c5 { background: #46bdc6; }
+
+    /* ── Incognito tip ── */
+    .tip-box {
+      background: #fffde7; border: 1px solid #ffe082; border-radius: 8px;
+      padding: 12px 14px; margin-top: 14px; text-align: left;
+    }
+    .tip-box p { font-size: 12px; color: #6d5c00; line-height: 1.5; margin: 0; }
+    .tip-box strong { color: #e65100; }
+    .tip-box code {
+      background: #fff8e1; padding: 1px 5px; border-radius: 3px;
+      font-size: 11px; font-family: monospace;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <img class="logo" src="../logo_official.svg" alt="Massive Delete Gmail">
     <h1 id="title">Open Massive Delete Gmail</h1>
-    <p class="subtitle" id="subtitle">Click below to open the app. If you have only one Google account, it will open directly.</p>
+    <p class="subtitle" id="subtitle">Click below to open the app.</p>
 
     <a class="btn-primary" id="btnOpen" href="#">
       <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
@@ -187,12 +114,16 @@
     <div class="trouble">
       <button class="trouble-toggle" id="troubleToggle" onclick="toggleTrouble()">
         <span id="troubleLabel">Seeing a Google Drive error?</span>
-        <span class="arrow">▼</span>
+        <span class="arrow">&#x25BC;</span>
       </button>
       <div class="trouble-body" id="troubleBody">
-        <p id="troubleDesc">If you have multiple Google accounts logged in, Google may not know which one to use. Pick the account slot that matches the Google account you want:</p>
+        <p id="troubleDesc">If you have multiple Google accounts logged in, Google may not know which one to use. Pick your account slot below:</p>
         <div class="account-grid" id="accountGrid"></div>
-        <p class="hint" id="troubleHint">Try each one until the app opens. Usually it's Account 1 or 2.</p>
+        <p class="hint" id="troubleHint">Try each one until the app opens correctly.</p>
+
+        <div class="tip-box">
+          <p id="tipText"><strong>Tip:</strong> If none of the buttons above work, open an <strong>incognito/private window</strong> and paste the direct link. That always works because there's only one account session.</p>
+        </div>
       </div>
     </div>
 
@@ -200,27 +131,41 @@
   </div>
 
   <script>
-    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg/exec';
+    // The deploy ID
+    var DEPLOY_ID = 'AKfycbyCbg_EoiBsxVTRMBRF84OfnLz9Ck8LFWRYbUA7IPiLLCRd19lUNip5zzo4Escoo5trsg';
 
-    // Primary button: try authuser=0 (first account)
-    document.getElementById('btnOpen').href = SCRIPT_URL + '?authuser=0';
+    // Direct URL (no account hint — works if only 1 account or Google picks correctly)
+    var DIRECT_URL = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
+
+    // Account-specific URL using /u/N/ path (Google's internal multi-account routing)
+    // This does NOT cause redirect loops like ?authuser=N does
+    function accountUrl(n) {
+      return 'https://script.google.com/macros/u/' + n + '/s/' + DEPLOY_ID + '/exec';
+    }
+
+    // Primary button: direct URL
+    document.getElementById('btnOpen').href = DIRECT_URL;
 
     // Build account grid (0-5)
     var grid = document.getElementById('accountGrid');
-    var labels = ['1ª', '2ª', '3ª', '4ª', '5ª', '6ª'];
     for (var i = 0; i < 6; i++) {
       var a = document.createElement('a');
       a.className = 'account-btn';
-      a.href = SCRIPT_URL + '?authuser=' + i;
-      a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span><span class="acc-label">' + labels[i] + ' <span id="accWord' + i + '">Account</span></span>';
+      a.href = accountUrl(i);
+      a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span>'
+                   + '<span class="acc-label"><span class="aw">' + ordinal(i) + '</span></span>';
       grid.appendChild(a);
     }
 
+    function ordinal(i) {
+      var labels = { en: ['1st','2nd','3rd','4th','5th','6th'], pt: ['1ª','2ª','3ª','4ª','5ª','6ª'], es: ['1ª','2ª','3ª','4ª','5ª','6ª'] };
+      var l = labels[lang] || labels['en'];
+      return l[i] + ' ' + (t ? t.accWord : 'Account');
+    }
+
     function toggleTrouble() {
-      var btn = document.getElementById('troubleToggle');
-      var body = document.getElementById('troubleBody');
-      btn.classList.toggle('open');
-      body.classList.toggle('open');
+      document.getElementById('troubleToggle').classList.toggle('open');
+      document.getElementById('troubleBody').classList.toggle('open');
     }
 
     // ── i18n ──
@@ -228,32 +173,35 @@
     var i18n = {
       pt: {
         title: 'Abrir Massive Delete Gmail',
-        subtitle: 'Clique abaixo para abrir o app. Se você tem apenas uma conta Google, ele abrirá diretamente.',
+        subtitle: 'Clique abaixo para abrir o app.',
         btnOpen: 'Abrir App',
         troubleLabel: 'Apareceu um erro do Google Drive?',
-        troubleDesc: 'Se você tem várias contas Google logadas, o Google pode não saber qual usar. Escolha o slot da conta que deseja:',
-        troubleHint: 'Tente cada uma até o app abrir. Geralmente é a Conta 1 ou 2.',
+        troubleDesc: 'Se você tem várias contas Google logadas, o Google pode não saber qual usar. Escolha o número da sua conta abaixo:',
+        troubleHint: 'Tente cada uma até o app abrir corretamente.',
         accWord: 'Conta',
+        tip: '',
         note: 'Powered by Google Apps Script. Nunca vemos sua senha.'
       },
       en: {
         title: 'Open Massive Delete Gmail',
-        subtitle: 'Click below to open the app. If you have only one Google account, it will open directly.',
+        subtitle: 'Click below to open the app.',
         btnOpen: 'Open App',
         troubleLabel: 'Seeing a Google Drive error?',
-        troubleDesc: 'If you have multiple Google accounts logged in, Google may not know which one to use. Pick the account slot that matches the Google account you want:',
-        troubleHint: 'Try each one until the app opens. Usually it\'s Account 1 or 2.',
+        troubleDesc: 'If you have multiple Google accounts logged in, Google may not know which one to use. Pick your account slot below:',
+        troubleHint: 'Try each one until the app opens correctly.',
         accWord: 'Account',
+        tip: '',
         note: 'Powered by Google Apps Script. We never see your password.'
       },
       es: {
         title: 'Abrir Massive Delete Gmail',
-        subtitle: 'Haga clic abajo para abrir la app. Si solo tiene una cuenta de Google, se abrirá directamente.',
+        subtitle: 'Haga clic abajo para abrir la app.',
         btnOpen: 'Abrir App',
         troubleLabel: '¿Aparece un error de Google Drive?',
-        troubleDesc: 'Si tiene varias cuentas de Google, es posible que Google no sepa cuál usar. Elija la cuenta que desea:',
-        troubleHint: 'Pruebe cada una hasta que la app se abra. Normalmente es la Cuenta 1 o 2.',
+        troubleDesc: 'Si tiene varias cuentas de Google, es posible que Google no sepa cuál usar. Elija su cuenta abajo:',
+        troubleHint: 'Pruebe cada una hasta que la app se abra correctamente.',
         accWord: 'Cuenta',
+        tip: '',
         note: 'Powered by Google Apps Script. Nunca vemos tu contraseña.'
       }
     };
@@ -266,14 +214,21 @@
     document.getElementById('troubleDesc').textContent = t.troubleDesc;
     document.getElementById('troubleHint').textContent = t.troubleHint;
     document.getElementById('noteText').textContent = t.note;
-    for (var j = 0; j < 6; j++) {
-      var el = document.getElementById('accWord' + j);
-      if (el) el.textContent = t.accWord;
+
+    // Localize tip box
+    var tipEl = document.getElementById('tipText');
+    if (lang === 'pt') {
+      tipEl.innerHTML = '<strong>Dica:</strong> Se nenhum botão acima funcionar, abra uma <strong>janela anônima/privada</strong> e acesse o link direto. Isso sempre funciona porque há apenas uma sessão de conta.';
+    } else if (lang === 'es') {
+      tipEl.innerHTML = '<strong>Consejo:</strong> Si ningún botón funciona, abra una <strong>ventana de incógnito/privada</strong> y acceda al enlace directo. Siempre funciona porque solo hay una sesión de cuenta.';
     }
 
-    // If URL has ?error or ?retry, auto-open trouble section
-    if (location.search.indexOf('error') !== -1 || location.search.indexOf('retry') !== -1) {
-      toggleTrouble();
+    // Update ordinal labels with localized text
+    var awEls = document.querySelectorAll('.aw');
+    var ordLabels = { en: ['1st','2nd','3rd','4th','5th','6th'], pt: ['1ª','2ª','3ª','4ª','5ª','6ª'], es: ['1ª','2ª','3ª','4ª','5ª','6ª'] };
+    var ol = ordLabels[lang] || ordLabels['en'];
+    for (var k = 0; k < awEls.length; k++) {
+      awEls[k].textContent = ol[k] + ' ' + t.accWord;
     }
   </script>
 </body>
