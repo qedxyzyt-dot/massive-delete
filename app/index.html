@@ -34,51 +34,53 @@
     .btn-primary:hover { background: #2a56b8; box-shadow: 0 4px 16px rgba(51,103,214,0.25); }
     .btn-primary svg { flex-shrink: 0; }
 
-    /* ── Trouble section ── */
-    .trouble { margin-top: 24px; border-top: 1px solid #eee; padding-top: 18px; }
-    .trouble-toggle {
+    /* ── Help section ── */
+    .help { margin-top: 24px; border-top: 1px solid #eee; padding-top: 18px; }
+    .help-toggle {
       display: inline-flex; align-items: center; gap: 6px;
       background: none; border: none; color: #3367d6;
       font-size: 13px; font-weight: 600; cursor: pointer;
       padding: 6px 12px; border-radius: 6px; transition: background 0.15s;
     }
-    .trouble-toggle:hover { background: #f0f4ff; }
-    .trouble-toggle .arrow { transition: transform 0.2s; font-size: 10px; }
-    .trouble-toggle.open .arrow { transform: rotate(180deg); }
-    .trouble-body { display: none; margin-top: 16px; text-align: left; }
-    .trouble-body.open { display: block; }
-    .trouble-body p { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 14px; }
-    .trouble-body .hint { font-size: 12px; color: #999; line-height: 1.4; margin-bottom: 12px; text-align: center; }
+    .help-toggle:hover { background: #f0f4ff; }
+    .help-toggle .arrow { transition: transform 0.2s; font-size: 10px; }
+    .help-toggle.open .arrow { transform: rotate(180deg); }
+    .help-body { display: none; margin-top: 16px; text-align: left; }
+    .help-body.open { display: block; }
+    .help-body p { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 14px; }
 
-    /* ── Account grid ── */
-    .account-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-    .account-btn {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 14px 8px; background: #f7f8fa; border: 2px solid #e0e0e0;
-      border-radius: 10px; cursor: pointer; text-decoration: none;
-      transition: all 0.15s; color: #1a1a1a;
+    /* ── Steps ── */
+    .steps { list-style: none; margin: 0 0 16px; padding: 0; }
+    .steps li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0; font-size: 13px; color: #444; line-height: 1.5;
     }
-    .account-btn:hover { border-color: #3367d6; background: #f0f4ff; box-shadow: 0 2px 8px rgba(51,103,214,0.12); }
-    .account-btn .acc-icon {
-      width: 32px; height: 32px; border-radius: 50%;
+    .steps li + li { border-top: 1px solid #f0f0f0; }
+    .step-num {
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+      background: #3367d6; color: #fff; font-size: 13px; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 6px;
     }
-    .account-btn .acc-label { font-size: 12px; font-weight: 600; color: #555; }
-    .c0{background:#4285f4} .c1{background:#ea4335} .c2{background:#fbbc05;color:#333!important}
-    .c3{background:#34a853} .c4{background:#ff6d01} .c5{background:#46bdc6}
-
-    /* ── Tip box ── */
-    .tip-box { background:#fffde7; border:1px solid #ffe082; border-radius:8px; padding:12px 14px; margin-top:14px; text-align:left; }
-    .tip-box p { font-size:12px; color:#6d5c00; line-height:1.5; margin:0; }
-    .tip-box strong { color:#e65100; }
+    .steps kbd {
+      display: inline-block; padding: 2px 6px; font-size: 11px;
+      background: #f3f3f3; border: 1px solid #d0d0d0; border-radius: 4px;
+      font-family: inherit; font-weight: 600; white-space: nowrap;
+    }
 
     /* ── Copy row ── */
-    .copy-row { display:flex; gap:8px; margin-top:14px; align-items:center; }
-    .copy-input { flex:1; padding:8px 12px; font-size:11px; font-family:monospace; border:1px solid #ddd; border-radius:6px; background:#f9f9f9; color:#333; overflow:hidden; text-overflow:ellipsis; }
-    .copy-btn { padding:8px 14px; font-size:12px; font-weight:600; background:#f0f0f0; border:1px solid #ddd; border-radius:6px; cursor:pointer; transition:background .15s; white-space:nowrap; }
-    .copy-btn:hover { background:#e0e0e0; }
-    .copy-btn.copied { background:#e6f4ea; border-color:#b7dfc3; color:#137333; }
+    .copy-row { display: flex; gap: 8px; margin-bottom: 16px; align-items: center; }
+    .copy-input {
+      flex: 1; padding: 10px 12px; font-size: 11px; font-family: monospace;
+      border: 1px solid #ddd; border-radius: 6px; background: #f9f9f9;
+      color: #333; overflow: hidden; text-overflow: ellipsis;
+    }
+    .copy-btn {
+      padding: 10px 16px; font-size: 13px; font-weight: 600;
+      background: #3367d6; color: #fff; border: none; border-radius: 6px;
+      cursor: pointer; transition: background .15s; white-space: nowrap;
+    }
+    .copy-btn:hover { background: #2a56b8; }
+    .copy-btn.copied { background: #137333; }
 
     .note { font-size: 11px; color: #aaa; margin-top: 16px; line-height: 1.4; }
   </style>
@@ -87,9 +89,8 @@
   <div class="card">
     <img class="logo" src="../logo_official.svg" alt="Massive Delete Gmail">
     <h1 id="title">Open Massive Delete Gmail</h1>
-    <p class="subtitle" id="subtitle">Click below to open the app.</p>
+    <p class="subtitle" id="subtitle">Click below to open the app. Google will ask you to sign in if needed.</p>
 
-    <!-- Primary: plain URL (works for single-account users) -->
     <a class="btn-primary" id="btnOpen" href="#">
       <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
@@ -100,25 +101,23 @@
       <span id="btnOpenText">Open App</span>
     </a>
 
-    <!-- ── Trouble section ── -->
-    <div class="trouble">
-      <button class="trouble-toggle" id="troubleToggle" onclick="toggleTrouble()">
-        <span id="troubleLabel">Seeing a Google Drive error?</span>
+    <!-- ── Help section ── -->
+    <div class="help">
+      <button class="help-toggle" id="helpToggle" onclick="toggleHelp()">
+        <span id="helpLabel">Having trouble opening?</span>
         <span class="arrow">&#x25BC;</span>
       </button>
-      <div class="trouble-body" id="troubleBody">
-        <p id="troubleDesc">If you have multiple Google accounts logged in, the app may not know which one to use. Pick your account number below:</p>
-        <div class="account-grid" id="accountGrid"></div>
-        <p class="hint" id="troubleHint">Try each one — one of them will open the app correctly.</p>
-
-        <div class="tip-box">
-          <p id="tipText"></p>
-        </div>
+      <div class="help-body" id="helpBody">
+        <p id="helpDesc">If you have multiple Google accounts and the button above shows an error, follow these steps:</p>
 
         <div class="copy-row">
           <input type="text" class="copy-input" id="copyInput" readonly>
-          <button class="copy-btn" id="copyBtn" onclick="doCopy()"><span id="copyBtnText">Copy</span></button>
+          <button class="copy-btn" id="copyBtn" onclick="doCopy()"><span id="copyBtnText">Copy link</span></button>
         </div>
+
+        <ol class="steps" id="stepsList"></ol>
+
+        <p id="helpNote" style="font-size:12px;color:#888;text-align:center;margin:0;"></p>
       </div>
     </div>
 
@@ -127,47 +126,21 @@
 
   <script>
     /* ═══════════════════════════════════════════════════
-       CONFIG
-       /u/N/ goes RIGHT AFTER the domain, before /macros/.
-       Correct:  script.google.com /u/0/ macros/s/ID/exec
-       Wrong:    script.google.com/macros /u/0/ s/ID/exec
+       CONFIG — Direct link to Apps Script web app.
+       Google handles auth/account selection natively.
        ═══════════════════════════════════════════════════ */
     var DEPLOY_ID = 'AKfycbyVQc93W-yMTAvOW-GhNwmMjtMuxGLW-jB4GFRlDBu3tq8GB2rqXWtCTTYhcEXatdTl8w';
-    var BASE_URL  = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
+    var APP_URL   = 'https://script.google.com/macros/s/' + DEPLOY_ID + '/exec';
 
-    // /u/N/ variant — tells Google which logged-in account to use
-    function slotUrl(n) {
-      return 'https://script.google.com/u/' + n + '/macros/s/' + DEPLOY_ID + '/exec';
-    }
-
-    /* ═══════════════════════════════════════════════════
-       PRIMARY BUTTON — plain URL (works for most users)
-       ═══════════════════════════════════════════════════ */
-    document.getElementById('btnOpen').href = BASE_URL;
-
-    /* ═══════════════════════════════════════════════════
-       ACCOUNT GRID — /u/0/ through /u/5/
-       Uses: script.google.com/u/N/macros/s/ID/exec
-       ═══════════════════════════════════════════════════ */
-    var grid = document.getElementById('accountGrid');
-    for (var i = 0; i < 6; i++) {
-      var a = document.createElement('a');
-      a.className = 'account-btn';
-      a.href = slotUrl(i);
-      a.innerHTML = '<span class="acc-icon c' + i + '">' + (i + 1) + '</span>'
-                   + '<span class="acc-label lbl-' + i + '"></span>';
-      grid.appendChild(a);
-    }
-
-    /* Copy field — direct URL (for incognito) */
-    document.getElementById('copyInput').value = BASE_URL;
+    document.getElementById('btnOpen').href = APP_URL;
+    document.getElementById('copyInput').value = APP_URL;
 
     /* ═══════════════════════════════════════════════════
        HELPERS
        ═══════════════════════════════════════════════════ */
-    function toggleTrouble() {
-      document.getElementById('troubleToggle').classList.toggle('open');
-      document.getElementById('troubleBody').classList.toggle('open');
+    function toggleHelp() {
+      document.getElementById('helpToggle').classList.toggle('open');
+      document.getElementById('helpBody').classList.toggle('open');
     }
 
     function doCopy() {
@@ -176,54 +149,69 @@
       navigator.clipboard.writeText(inp.value).then(function() {
         var b = document.getElementById('copyBtn');
         b.classList.add('copied');
-        document.getElementById('copyBtnText').textContent = '\u2713 ' + (t.copied || 'Copied');
+        document.getElementById('copyBtnText').textContent = '\u2713 ' + (t.copied || 'Copied!');
         setTimeout(function() {
           b.classList.remove('copied');
-          document.getElementById('copyBtnText').textContent = t.copy || 'Copy';
-        }, 2000);
+          document.getElementById('copyBtnText').textContent = t.copyBtn || 'Copy link';
+        }, 2500);
       });
     }
 
     /* ═══════════════════════════════════════════════════
        i18n
        ═══════════════════════════════════════════════════ */
+    var isMac = /Mac|iPhone|iPad/.test(navigator.platform || '');
+    var shortcut = isMac ? 'Cmd+Shift+N' : 'Ctrl+Shift+N';
+
     var lang = (navigator.language || '').slice(0, 2);
     var i18n = {
       pt: {
         title: 'Abrir Massive Delete Gmail',
-        subtitle: 'Clique abaixo para abrir o app.',
+        subtitle: 'Clique abaixo para abrir o app. O Google pedir\u00e1 login se necess\u00e1rio.',
         btnOpen: 'Abrir App',
-        troubleLabel: 'Apareceu um erro do Google Drive?',
-        troubleDesc: 'Se voc\u00ea tem v\u00e1rias contas Google logadas, o app pode n\u00e3o saber qual usar. Escolha o n\u00famero da sua conta:',
-        troubleHint: 'Tente cada uma \u2014 uma delas vai abrir o app.',
-        accWord: 'Conta',
+        helpLabel: 'Erro ao abrir? Veja como resolver',
+        helpDesc: 'Se voc\u00ea usa v\u00e1rias contas Google e o bot\u00e3o acima d\u00e1 erro, siga estes passos:',
+        steps: [
+          'Clique em <strong>\u201cCopiar link\u201d</strong> acima.',
+          'Abra uma <strong>janela an\u00f4nima</strong> no navegador (<kbd>' + shortcut + '</kbd>).',
+          'Cole o link na barra de endere\u00e7os e pressione Enter.',
+          'Fa\u00e7a login com a conta Gmail desejada \u2014 <strong>suas outras contas n\u00e3o ser\u00e3o desconectadas</strong>.'
+        ],
+        helpNote: 'Funciona sempre, independente de quantas contas voc\u00ea tem.',
         note: 'Powered by Google Apps Script. Nunca vemos sua senha.',
-        tip: '<strong>Dica:</strong> Se nenhum bot\u00e3o funcionar, abra uma <strong>janela an\u00f4nima</strong> (Ctrl+Shift+N) e cole o link abaixo. Funciona sempre.',
-        copy: 'Copiar', copied: 'Copiado'
+        copyBtn: 'Copiar link', copied: 'Copiado!'
       },
       en: {
         title: 'Open Massive Delete Gmail',
-        subtitle: 'Click below to open the app.',
+        subtitle: 'Click below to open the app. Google will ask you to sign in if needed.',
         btnOpen: 'Open App',
-        troubleLabel: 'Seeing a Google Drive error?',
-        troubleDesc: 'If you have multiple Google accounts logged in, the app may not know which one to use. Pick your account number:',
-        troubleHint: 'Try each one \u2014 one of them will open the app.',
-        accWord: 'Account',
+        helpLabel: 'Having trouble opening?',
+        helpDesc: 'If you have multiple Google accounts and the button above shows an error, follow these steps:',
+        steps: [
+          'Click <strong>\u201cCopy link\u201d</strong> above.',
+          'Open an <strong>incognito window</strong> in your browser (<kbd>' + shortcut + '</kbd>).',
+          'Paste the link in the address bar and press Enter.',
+          'Sign in with your desired Gmail account \u2014 <strong>your other accounts won\u2019t be signed out</strong>.'
+        ],
+        helpNote: 'This always works, regardless of how many accounts you have.',
         note: 'Powered by Google Apps Script. We never see your password.',
-        tip: '<strong>Tip:</strong> If none work, open an <strong>incognito window</strong> (Ctrl+Shift+N) and paste the link below. Always works.',
-        copy: 'Copy', copied: 'Copied'
+        copyBtn: 'Copy link', copied: 'Copied!'
       },
       es: {
         title: 'Abrir Massive Delete Gmail',
-        subtitle: 'Haga clic abajo para abrir la app.',
+        subtitle: 'Haga clic para abrir la app. Google le pedir\u00e1 iniciar sesi\u00f3n si es necesario.',
         btnOpen: 'Abrir App',
-        troubleLabel: '\u00bfAparece un error de Google Drive?',
-        troubleDesc: 'Si tiene varias cuentas de Google, la app puede no saber cu\u00e1l usar. Elija el n\u00famero de su cuenta:',
-        troubleHint: 'Pruebe cada una \u2014 una abrir\u00e1 la app.',
-        accWord: 'Cuenta',
-        note: 'Powered by Google Apps Script. Nunca vemos tu contrase\u00f1a.',
-        tip: '<strong>Consejo:</strong> Si ninguno funciona, abra una <strong>ventana de inc\u00f3gnito</strong> (Ctrl+Shift+N) y pegue el enlace de abajo. Siempre funciona.',
-        copy: 'Copiar', copied: 'Copiado'
+        helpLabel: '\u00bfError al abrir? Vea c\u00f3mo resolverlo',
+        helpDesc: 'Si usa varias cuentas de Google y el bot\u00f3n de arriba da error, siga estos pasos:',
+        steps: [
+          'Haga clic en <strong>\u201cCopiar enlace\u201d</strong> arriba.',
+          'Abra una <strong>ventana de inc\u00f3gnito</strong> en su navegador (<kbd>' + shortcut + '</kbd>).',
+          'Pegue el enlace en la barra de direcciones y presione Enter.',
+          'Inicie sesi\u00f3n con la cuenta Gmail deseada \u2014 <strong>sus otras cuentas no se desconectar\u00e1n</strong>.'
+        ],
+        helpNote: 'Siempre funciona, sin importar cu\u00e1ntas cuentas tenga.',
+        note: 'Powered by Google Apps Script. Nunca vemos su contrase\u00f1a.',
+        copyBtn: 'Copiar enlace', copied: '\u00a1Copiado!'
       }
     };
 
@@ -231,20 +219,19 @@
     document.getElementById('title').textContent = t.title;
     document.getElementById('subtitle').textContent = t.subtitle;
     document.getElementById('btnOpenText').textContent = t.btnOpen;
-    document.getElementById('troubleLabel').textContent = t.troubleLabel;
-    document.getElementById('troubleDesc').textContent = t.troubleDesc;
-    document.getElementById('troubleHint').textContent = t.troubleHint;
+    document.getElementById('helpLabel').textContent = t.helpLabel;
+    document.getElementById('helpDesc').textContent = t.helpDesc;
+    document.getElementById('helpNote').textContent = t.helpNote;
     document.getElementById('noteText').textContent = t.note;
-    document.getElementById('tipText').innerHTML = t.tip;
-    document.getElementById('copyBtnText').textContent = t.copy;
+    document.getElementById('copyBtnText').textContent = t.copyBtn;
 
-    /* Account labels */
-    var ords = { en:['1st','2nd','3rd','4th','5th','6th'], pt:['1\u00aa','2\u00aa','3\u00aa','4\u00aa','5\u00aa','6\u00aa'], es:['1\u00aa','2\u00aa','3\u00aa','4\u00aa','5\u00aa','6\u00aa'] };
-    var ol = ords[lang] || ords['en'];
-    for (var k = 0; k < 6; k++) {
-      var el = document.querySelector('.lbl-' + k);
-      if (el) el.textContent = ol[k] + ' ' + t.accWord;
-    }
+    /* Build steps */
+    var ol = document.getElementById('stepsList');
+    t.steps.forEach(function(text, i) {
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="step-num">' + (i + 1) + '</span><span>' + text + '</span>';
+      ol.appendChild(li);
+    });
   </script>
 </body>
 </html>
